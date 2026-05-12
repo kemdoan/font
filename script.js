@@ -5,7 +5,7 @@
 const allFonts = [
   { name: 'Trọn bộ Font KD',    tag: '',             cat: '',         type: 'traphi',   price: '300k',    img: 'images/50fontkd.jpg',        link: 'http://zalo.me/0559970246' },
   { name: 'KD Font Finder',     tag: '',             cat: '',         type: 'traphi',   price: 'Ứng dụng tìm font',     img: 'images/kdfontfinder.jpg',        link: 'http://zalo.me/0559970246' },
-  { name: 'KD Netsera',         tag: 'Font Cưới',    cat: 'cuoi',     type: 'traphi',   price: '50k',     img: 'images/kdnetsera.jpg',       link: '1jQ1DJy1rLwAXuCofr48pJ5Fhc9besEj8' },
+  { name: 'KD Netsera',         tag: 'Font Cưới',    cat: 'cuoi',     type: 'traphi',   price: '50k',     img: 'images/kdnetsera.jpg',       link: 'http://zalo.me/0559970246' },
   { name: 'KD Goken',           tag: 'Font Khác',    cat: 'khac',     type: 'traphi',   price: '50k',     img: 'images/kdgoken.jpg',         link: 'http://zalo.me/0559970246' },
   { name: 'KD Boxroom',         tag: 'Font Khác',    cat: 'khac',     type: 'traphi',   price: '50k',     img: 'images/kdboxroom.jpg',       link: 'http://zalo.me/0559970246' },
   { name: 'KD Sulee',           tag: 'Font Chữ Ký',  cat: 'chuky',    type: 'traphi',   price: '50k',     img: 'images/kdsulee.jpg',         link: 'http://zalo.me/0559970246' },
