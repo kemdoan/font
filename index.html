@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#eeede9">
+<title>Font – Kem Đoàn</title>
+<link rel="shortcut icon" href="images/icon.png" type="image/x-icon">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="hero">
+    <!-- Thay avatar.jpg bằng ảnh của mày trong thư mục images/ -->
+    <div class="logo-circle">
+      <img src="images/kdlogo.png" alt="Logo">
+    </div>
+    <div class="hero-text">
+      <h1>Font – Kem Đoàn</h1>
+      <p>Design & Việt hóa font</p>
+      <div class="contact-row">
+        <a href="http://zalo.me/0559970246" target="_blank" rel="noopener" class="btn-nm btn-zalo">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.5 14.5H15l-3-4v4H9.5v-9H11l3 4v-4h2.5v9z"/></svg>
+          Zalo
+        </a>
+        <a href="https://www.facebook.com/fontkemdoan/" target="_blank" rel="noopener" class="btn-nm btn-fb">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          Facebook
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="search-wrap">
+    <span class="search-icon-left">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    </span>
+    <input class="search-box" type="text" id="searchInput" placeholder="Tìm font..." oninput="onSearch()">
+    <button class="search-clear" id="clearBtn" onclick="clearSearch()">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+
+  <div class="filter-bar">
+    <button class="chip active" onclick="setChip(this,'all')">Tất cả</button>
+    <button class="chip" onclick="setChip(this,'cuoi')">Font Cưới</button>
+    <button class="chip" onclick="setChip(this,'chuky')">Font Chữ Ký</button>
+    <button class="chip" onclick="setChip(this,'viettay')">Font Viết Tay</button>
+    <button class="chip" onclick="setChip(this,'khac')">Font Khác</button>
+    <button class="chip" onclick="setChip(this,'mienphi')">Font Miễn Phí</button>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="main" id="main">
+  <div class="count-label" id="countLabel"></div>
+  <div class="grid" id="grid"></div>
+  <div class="load-more-wrap" id="loadMoreWrap" style="display:none">
+    <button class="load-more-btn" id="loadMoreBtn" onclick="loadMore()">Xem tiếp</button>
+  </div>
+</div>
+
+  <!-- Back to top -->
+  <button class="backtotop-btn">
+    ↑
+  </button>
+
+<!-- FOOTER -->
+<div class="footer">© Kem Đoàn</div>
+
+<script src="script.js"></script>
+</body>
+</html>
