@@ -409,7 +409,7 @@ body {
   .grid { grid-template-columns: repeat(2, 1fr); }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 640px) {
   .grid { grid-template-columns: 1fr; }
 }
 
@@ -453,4 +453,207 @@ body {
   justify-content: center;
   align-items: center;
   z-index: 9999;
+}
+/* ── KD FONT FINDER CHIP ── */
+.chip-finder {
+  background: var(--pinkgradient);
+  color: #fff;
+  box-shadow: var(--box-shadow-btn);
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+/* ── KD FONT FINDER MODAL ── */
+.kd-modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(4px);
+  z-index: 2000;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.kd-modal-overlay.active {
+  display: flex;
+}
+
+.kd-modal {
+  background: var(--bg);
+  border-radius: 20px;
+  max-width: 1000px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  animation: modalIn 0.25s cubic-bezier(.4,0,.2,1);
+}
+
+@keyframes modalIn {
+  from { opacity: 0; transform: translateY(24px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.kd-modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: var(--bg);
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--box-shadow-btn);
+  color: var(--text-muted);
+  z-index: 10;
+  transition: all 0.15s;
+}
+.kd-modal-close:hover {
+  color: var(--text);
+  box-shadow: var(--box-shadow-btn);
+}
+.kd-modal-body {
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+  min-height: 360px;
+}
+
+/* Left: info */
+.kd-modal-info {
+  flex: 1;
+  padding: 40px 36px 36px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.kd-finder-logo {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.kd-finder-logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.kd-finder-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.kd-finder-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.5px;
+  margin: 0;
+  font-family: 'KDAPPFONT', sans-serif;
+}
+
+.kd-finder-sub {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin: 4px 0 0;
+}
+
+.kd-finder-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 4px;
+}
+.kd-finder-features li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+  color: var(--text);
+}
+.kd-finder-features li svg {
+  color: var(--green);
+  flex-shrink: 0;
+}
+
+.kd-finder-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  padding: 10px 22px;
+  border-radius: 50px;
+  background: var(--pinkgradient);
+  color: #fff;
+  font-family: 'KDAPPFONT', sans-serif;
+  font-size: 0.95rem;
+  text-decoration: none;
+  align-self: flex-start;
+  box-shadow: var(--box-shadow-btn);
+  transition: opacity 0.15s;
+}
+.kd-finder-btn:hover {
+  background: var(--bluegradient);
+}
+
+/* Right: video */
+.kd-modal-video {
+  flex: 1;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 32px 24px;
+  gap: 14px;
+}
+
+.kd-video-wrap {
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+  background: #000;
+  aspect-ratio: 16/9;
+}
+.kd-video-wrap video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+.kd-video-caption {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 1rem;
+  color: var(--text-muted);
+  font-family: 'KDAPPFONT', sans-serif;
+}
+.kd-video-caption svg {
+  color: var(--buy);
+}
+
+/* Responsive: stack on narrow */
+@media (max-width: 640px) {
+  .kd-modal-body {
+    flex-direction: column-reverse;
+  }
+  .kd-modal-info {
+    padding: 28px 24px 28px 24px;
+  }
+  .kd-modal-video {
+    padding: 24px 24px 8px;
+  }
 }
