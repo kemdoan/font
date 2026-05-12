@@ -4,7 +4,6 @@
 
 const allFonts = [
   { name: 'Trọn bộ Font KD',    tag: '',             cat: '',         type: 'traphi',   price: '300k',    img: 'images/50fontkd.jpg',        link: 'http://zalo.me/0559970246' },
-  { name: 'KD Font Finder',     tag: '',             cat: '',         type: 'traphi',   price: 'Ứng dụng tìm font',     img: 'images/kdfontfinder.jpg',        link: 'http://zalo.me/0559970246' },
   { name: 'KD Netsera',         tag: 'Font Cưới',    cat: 'cuoi',     type: 'traphi',   price: '50k',     img: 'images/kdnetsera.jpg',       link: 'http://zalo.me/0559970246' },
   { name: 'KD Goken',           tag: 'Font Khác',    cat: 'khac',     type: 'traphi',   price: '50k',     img: 'images/kdgoken.jpg',         link: 'http://zalo.me/0559970246' },
   { name: 'KD Boxroom',         tag: 'Font Khác',    cat: 'khac',     type: 'traphi',   price: '50k',     img: 'images/kdboxroom.jpg',       link: 'http://zalo.me/0559970246' },
@@ -57,7 +56,6 @@ const allFonts = [
   { name: 'KD Vince Display',   tag: 'Font Khác',     cat: 'khac',    type: 'mienphi',  price: '',        img: 'images/kdvincedisplay.jpg',       link: '1b6KN36utlHcZqc2-Mi8NRHdWz4SfvIgs' },
   { name: 'KD Yon Love',        tag: 'Font Khác',     cat: 'khac',    type: 'mienphi',  price: '',        img: 'images/kdyonlove.jpg',            link: '1CkgxirVfbSgkaMRLaXk9gWmrHsKqNMzS' },
   { name: 'KD Zoika',           tag: 'Font Khác',     cat: 'khac',    type: 'mienphi',  price: '',        img: 'images/kdzoika.jpg',              link: '1tVxUfTcBy3l1jJoNRcdVQkaQkhYMGgSs' },
-  // Thêm font tiếp theo vào đây...
 ];
 
 const iconCart = `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -76,7 +74,7 @@ let currentCat = 'all';
 let filtered = [];
 let shown = 0;
 
-/* --- Search --- */
+// Search
 function onSearch() {
   const val = document.getElementById('searchInput').value;
   document.getElementById('clearBtn').classList.toggle('visible', val.length > 0);
@@ -89,7 +87,6 @@ function clearSearch() {
   runFilter();
 }
 
-/* --- Filter chips --- */
 function setChip(el, cat) {
   document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
   el.classList.add('active');
@@ -97,7 +94,6 @@ function setChip(el, cat) {
   runFilter();
 }
 
-/* --- Run filter + reset pagination --- */
 function runFilter() {
   const q = document.getElementById('searchInput').value.toLowerCase().trim();
 
@@ -120,11 +116,11 @@ function runFilter() {
   document.getElementById('countLabel').textContent = filtered.length + ' font';
 }
 
-/* --- Build card HTML --- */
+// Card HTML
 function cardHTML(f) {
   const isFree = f.type === 'mienphi';
   
-  // Tự động ghép link Drive nếu link là ID thuần (không phải URL)
+  // Dowload Drive
   const resolvedLink = (f.link && f.link !== '#' && !f.link.startsWith('http'))
     ? `https://drive.google.com/uc?export=download&id=${f.link}`
     : f.link;
@@ -151,7 +147,6 @@ function cardHTML(f) {
     </div>`;
 }
 
-/* --- Append next page of cards --- */
 function appendCards() {
   const g    = document.getElementById('grid');
   const wrap = document.getElementById('loadMoreWrap');
@@ -183,7 +178,6 @@ function loadMore() {
   appendCards();
 }
 
-/* --- Init --- */
 runFilter();
 
 // BACK TO TOP
@@ -197,3 +191,31 @@ backToTopBtn.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
+
+// KD Font Finder
+function openFontFinder() {
+  const modal = document.getElementById('kdModal');
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeFontFinder(e) {
+  if (e && e.target !== document.getElementById('kdModal')) return;
+  const modal = document.getElementById('kdModal');
+  modal.classList.remove('active');
+  document.body.style.overflow = '';
+  const video = modal.querySelector('video');
+  if (video) video.pause();
+}
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    const modal = document.getElementById('kdModal');
+    if (modal && modal.classList.contains('active')) {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+      const video = modal.querySelector('video');
+      if (video) video.pause();
+    }
+  }
+});
