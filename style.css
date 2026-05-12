@@ -18,6 +18,7 @@
   --accent: #584838;
   --green: #1fabb3;
   --buy: #666fff;
+  --free: #ff6990;
   --box-shadow:
        8px 8px 16px #d9dae0,
       -8px -8px 16px #fff;
@@ -30,6 +31,7 @@
   --bluegradient: linear-gradient(90deg, #938dff, #666fff);
   --yellowgradient: linear-gradient(90deg, #e6c349, #ff984c);
   --greengradient: linear-gradient(90deg, #62f4e1, #50daea);
+  --pinkgradient: linear-gradient(90deg, #ff95b0, #ff6990);
 }
 
 html, body { height: 100%; }
@@ -310,7 +312,7 @@ body {
   color: var(--buy);
 }
 
-.price.free { color: var(--green); }
+.price.free { color: var(--free); }
 
 .action-btn.buy { color: var(--text-muted); }
 .action-btn.dl  { color: var(--text-muted); }
@@ -322,7 +324,7 @@ body {
 }
 
 .action-btn.dl:hover {
-  background: var(--greengradient);
+  background: var(--pinkgradient);
   color: #fff;
   box-shadow: var(--box-shadow);
 }
