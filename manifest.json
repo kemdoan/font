@@ -1,0 +1,21 @@
+{
+  "name": "Font - Kem Đoàn",
+  "short_name": "Font - Kem Đoàn",
+  "description": "Font Việt hóa Kem Đoàn",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#efefef",
+  "theme_color": "#efefef",
+  "icons": [
+    {
+      "src": "kdlogo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "kdlogo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
