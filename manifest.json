@@ -1,0 +1,20 @@
+{
+  "name": "Font - Kem Đoàn",
+  "short_name": "Font - Kem Đoàn",
+  "start_url": "/font/",
+  "display": "standalone",
+  "background_color": "#fff",
+  "theme_color": "#efefef",
+  "icons": [
+    {
+      "src": "images/favicon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "images/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
