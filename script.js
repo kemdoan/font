@@ -3,7 +3,7 @@
 ============================================================ */
 
 const allFonts = [
-  { name: 'Trọn bộ Font KD',    tag: '',             cat: '',         type: 'traphi',   price: '300k',    img: 'images/50fontkd.jpg',        link: 'http://zalo.me/0559970246' },
+  { name: 'Full Font KD',    tag: '',             cat: '',         type: 'traphi',   price: '300k',    img: 'images/50fontkd.jpg',        link: '1vgcFX7IAhI6HOyq5C3oI0mY7f8LZHkwE' },
   { name: 'KD Netsera',         tag: 'Font Cưới',    cat: 'cuoi',     type: 'traphi',   price: '50k',     img: 'images/kdnetsera.jpg',       link: '1DexKoA1kLiYSkUOimx7kJODVJ1f8CvZ7' },
   { name: 'KD Goken',           tag: 'Font Khác',    cat: 'khac',     type: 'traphi',   price: '50k',     img: 'images/kdgoken.jpg',         link: '1b2O1vybkscQ9PQTWCveA-hCcRzCWXSiE' },
   { name: 'KD Boxroom',         tag: 'Font Khác',    cat: 'khac',     type: 'traphi',   price: '50k',     img: 'images/kdboxroom.jpg',       link: '14nZqyDi7SXmf_C227OrizP4CmTLvN6ob' },
