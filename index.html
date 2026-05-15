@@ -7,7 +7,7 @@
   <link rel="icon" type="image/png" href="images/favicon-512.png">
   <link rel="manifest" href="manifest.json">
   <title>Font - Kem Đoàn</title>
-  <meta name="description" content="Font Việt hóa - font cưới, font chữ ký, font viết tay, font decor...">
+  <meta name="description" content="Tải font Việt hóa - font cưới, font chữ ký, font viết tay, font beauty, font decor...">
   <meta name="keywords" content="font việt hóa, font chữ đẹp, font cưới, font chữ ký, font viết tay, font miễn phí, kem đoàn, font KD">
   <meta name="author" content="Kem Đoàn">
   <meta name="robots" content="index, follow">
@@ -17,7 +17,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://kemdoan.github.io/font/">
   <meta property="og:title" content="Font - Kem Đoàn">
-  <meta property="og:description" content="Font Việt hóa - font cưới, font chữ ký, font viết tay, font decor...">
+  <meta property="og:description" content="Tải font Việt hóa - font cưới, font chữ ký, font viết tay, font beauty, font decor...">
   <meta property="og:image" content="https://kemdoan.github.io/font/images/font-kem-doan.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -26,7 +26,7 @@
   
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Font - Kem Đoàn">
-  <meta name="twitter:description" content="Font Việt hóa - font cưới, font chữ ký, font viết tay, font decor...">
+  <meta name="twitter:description" content="Tải font Việt hóa - font cưới, font chữ ký, font viết tay, font beauty, font decor...">
   <meta name="twitter:image" content="https://kemdoan.github.io/font/images/logo.png">
   
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -76,6 +76,7 @@
     <button class="chip" onclick="setChip(this,'viettay')">Font Viết Tay</button>
     <button class="chip" onclick="setChip(this,'khac')">Font Khác</button>
     <button class="chip" onclick="setChip(this,'mienphi')">Font Miễn Phí</button>
+    <button class="chip" onclick="setChip(this,'kdvip')">VIP</button>
     <button class="chip chip-finder" onclick="openFontFinder()">KD Font Finder</button>
   </div>
 </div>
@@ -112,10 +113,20 @@
           </li>
           <li>
         </ul>
-        <a href="http://zalo.me/0559970246" class="kd-finder-btn" target="_blank" rel="noopener">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M7.29117 20.8242L2 22L3.17581 16.7088C2.42544 15.3056 2 13.7025 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C10.2975 22 8.6944 21.5746 7.29117 20.8242Z"/></svg>
-          Liên hệ
-        </a>
+        <div class="kd-finder-btns">
+          <a href="http://zalo.me/0559970246" class="kd-finder-btn" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M7.29117 20.8242L2 22L3.17581 16.7088C2.42544 15.3056 2 13.7025 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C10.2975 22 8.6944 21.5746 7.29117 20.8242Z"/></svg>
+            Liên hệ
+          </a>
+          <a href="https://drive.google.com/file/d/1WKED6F2CMCtNs6SRWuNm7eq0U_EwepzJ/" class="kd-finder-btn kd-finder-btn--download" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7 10 12 15 17 10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            Tải App
+          </a>
+        </div>
       </div>
       <!-- VIDEO DEMO -->
       <div class="kd-modal-video">
@@ -136,7 +147,12 @@
 
 <!-- MAIN -->
 <div class="main" id="main">
-  <div class="count-label" id="countLabel"></div>
+  <div class="count-row">
+    <span class="vip-note" id="vipNote" style="display:none">
+      <i>* Thư mục dành riêng cho những bạn đang sử dụng Ứng dụng KD Font Finder.</i>
+    </span>
+    <div class="count-label" id="countLabel"></div>
+  </div>
   <div class="grid" id="grid"></div>
   <div class="load-more-wrap" id="loadMoreWrap" style="display:none">
     <button class="load-more-btn" id="loadMoreBtn" onclick="loadMore()">Xem tiếp</button>
