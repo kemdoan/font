@@ -260,7 +260,6 @@ body {
 .preview-box {
   border-radius: 12px;
   background: var(--bg);
-  box-shadow: var(--active-btn);
   overflow: hidden;
   width: 100%;
   aspect-ratio: 16 / 9;
@@ -656,4 +655,49 @@ body {
   .kd-modal-video {
     padding: 24px 24px 8px;
   }
+}
+
+.card-name-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.update-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  background: #e1e1e6;
+  border-radius: 50px;
+  padding: 2px 8px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.count-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  padding: 0 24px;
+}
+
+.vip-note {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  border-radius: 20px;
+  padding: 4px 12px;
+}
+
+.count-label {
+  margin-left: auto;
+}
+
+.kd-finder-btns {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
 }
