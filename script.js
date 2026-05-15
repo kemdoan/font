@@ -15,7 +15,7 @@ const allFonts = [
   { name: 'KD Huees',           tag: 'Font Khác',    cat: 'khac',     type: 'traphi',   price: '50k',     img: 'images/kdhuees.jpg',         link: '1qsXoKu7nm_DGpcyAla6gsZFw88hmuLai' },
   { name: 'KD Kem Doan',        tag: 'Font Khác',    cat: 'khac',     type: 'traphi',   price: '50k',     img: 'images/kdkemdoan.jpg',       link: '17j_BgCy0kTpTpNDBRv2Qqpu1guhkY-KD' },
   { name: 'KD Doan Nguyen',     tag: 'Font Khác',    cat: 'khac',     type: 'traphi',   price: '70k / Reg & Bold', img: 'images/kddoannguyen.jpg',       link: '1d3eh5Ge2q_-kgiyv8OHngvXVDOerk0tO' },
-  { name: 'KD Handscript',      tag: 'Font Viết Tay',     cat: 'viettay',    type: 'traphi', price: '300k',        img: 'images/kdhandscript.jpg',       link: 'http://zalo.me/0559970246' },
+  { name: 'KD Handscript',      tag: 'Font Viết Tay',     cat: 'viettay',    type: 'traphi', price: '300k / No VIP',        img: 'images/kdhandscript.jpg',       link: 'http://zalo.me/0559970246' },
   { name: 'KD Handwritten',     tag: 'Font Viết Tay', cat: 'viettay', type: 'traphi',   price: 'Liên hệ',          img: 'images/kdhandwritten.jpg',      link: 'http://zalo.me/0559970246' },
   { name: 'KD Wedding Dress',   tag: 'Font Cưới',     cat: 'cuoi',    type: 'traphi',   price: '50k',     img: 'images/kdweddingdress.jpg',       link: '18BGqUzfqFxTfCgPBcIpiZ3S4KshrZ_vZ' },
   { name: 'KD Withlove',        tag: 'Font Cưới',     cat: 'cuoi',    type: 'traphi',   price: '50k',     img: 'images/kdwithlove.jpg',           link: '1gM8WdO1eWV1oaHgrWRfeKrL8m8vKc5T8' },
