@@ -138,7 +138,7 @@ function runFilter() {
   document.getElementById('grid').innerHTML = '';
   appendCards();
   document.getElementById('countLabel').textContent = filtered.length + ' font';
-  // Chú thích VIP
+  // Note VIP
 const vipNote = document.getElementById('vipNote');
 if (vipNote) {
   vipNote.style.display = currentCat === 'kdvip' ? 'block' : 'none';
