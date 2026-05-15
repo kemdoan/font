@@ -56,11 +56,34 @@ const allFonts = [
   { name: 'KD Vince Display',   tag: 'Font Khác',     cat: 'khac',    type: 'mienphi',  price: '',        img: 'images/kdvincedisplay.jpg',       link: '1b6KN36utlHcZqc2-Mi8NRHdWz4SfvIgs' },
   { name: 'KD Yon Love',        tag: 'Font Khác',     cat: 'khac',    type: 'mienphi',  price: '',        img: 'images/kdyonlove.jpg',            link: '1CkgxirVfbSgkaMRLaXk9gWmrHsKqNMzS' },
   { name: 'KD Zoika',           tag: 'Font Khác',     cat: 'khac',    type: 'mienphi',  price: '',        img: 'images/kdzoika.jpg',              link: '1tVxUfTcBy3l1jJoNRcdVQkaQkhYMGgSs' },
+  { name: 'Tổng hợp', tag: 'kdvip', cat: 'kdvip', type: 'kdvip', price: '', img: 'images/full.jpg', link: '1u1XxgSP8HLlpweeeTEe46gLOT-FY-dEQ', updateDate: 'Cập nhật 01/06/26' },
+  { name: 'Bộ 1FTV', tag: 'kdvip', cat: 'kdvip', type: 'kdvip', price: '', img: 'images/1ftv.jpg', link: '1aIiSUrC8-ry-xF5WxSjJAwaM76A5Ay0R', updateDate: 'Cập nhật 01/06/26' },
+  { name: 'Bộ DFVN', tag: 'kdvip', cat: 'kdvip', type: 'kdvip', price: '', img: 'images/dfvn.jpg', link: '16ynZsiQRuh9Nd9YywVpCYUS1Fy5L7hvW', updateDate: 'Cập nhật 01/06/26' },
+  { name: 'Bộ FZ', tag: 'kdvip', cat: 'kdvip', type: 'kdvip', price: '', img: 'images/fz.jpg', link: '16ynZsiQRuh9Nd9YywVpCYUS1Fy5L7hvW', updateDate: 'Cập nhật 01/06/26' },
+  { name: 'Bộ HL', tag: 'kdvip', cat: 'kdvip', type: 'kdvip', price: '', img: 'images/hl.jpg', link: '1NgD8fo2pq-OZKx56E7KLq7JHQEhmorXb', updateDate: 'Cập nhật 01/06/26' },
+  { name: 'Bộ HLT', tag: 'kdvip', cat: 'kdvip', type: 'kdvip', price: '', img: 'images/hlt.jpg', link: '116b3JT2_V60OI653w3WDrN7zlOWIFZb7', updateDate: 'Cập nhật 01/06/26' },
+  { name: 'Bộ HP', tag: 'kdvip', cat: 'kdvip', type: 'kdvip', price: '', img: 'images/hp.jpg', link: '1czHRrGZyS01neY2ksOyoBkSWTqAra_UL', updateDate: 'Cập nhật 01/06/26' },
+  { name: 'Bộ iCiel', tag: 'kdvip', cat: 'kdvip', type: 'kdvip', price: '', img: 'images/iciel.jpg', link: '1iugjunXlXdRKFPLp4e7Wz1uoQ0epPf0y', updateDate: 'Cập nhật 01/06/26' },
+  { name: 'Bộ LF', tag: 'kdvip', cat: 'kdvip', type: 'kdvip', price: '', img: 'images/lf.jpg', link: '1u2WPrw2SCcPWBcfr1GnvJGAIjH3P6Nip', updateDate: 'Cập nhật 01/06/26' },
+  { name: 'Bộ LNTH', tag: 'kdvip', cat: 'kdvip', type: 'kdvip', price: '', img: 'images/lnth.jpg', link: '1wqB4_1qPFYwBdnDwLZzfedACB5OSlinS', updateDate: 'Cập nhật 01/06/26' },
+  { name: 'Bộ MTD', tag: 'kdvip', cat: 'kdvip', type: 'kdvip', price: '', img: 'images/mtd.jpg', link: '1dqFHFzzNUMTqibHqgaUwJ_DYoV0JBjpK', updateDate: 'Cập nhật 01/06/26' },
+  { name: 'Bộ NVN', tag: 'kdvip', cat: 'kdvip', type: 'kdvip', price: '', img: 'images/nvn.jpg', link: '1f98t04UhJKk45tR_wTJTiULUBCemoiEw', updateDate: 'Cập nhật 01/06/26' },
+  { name: 'Bộ SFU', tag: 'kdvip', cat: 'kdvip', type: 'kdvip', price: '', img: 'images/sfu.jpg', link: '1Iohwo5iwyi2SVmuKIhib-m1_MRgGPtjy', updateDate: 'Cập nhật 01/06/26' },
+  { name: 'Bộ SVN', tag: 'kdvip', cat: 'kdvip', type: 'kdvip', price: '', img: 'images/svn.jpg', link: '1Wl17mohHelZx7agZBqvbp8HKqNJiIIus', updateDate: 'Cập nhật 01/06/26' },
+  { name: 'Bộ TQ', tag: 'kdvip', cat: 'kdvip', type: 'kdvip', price: '', img: 'images/tq.jpg', link: '', updateDate: 'xxx' },
+  { name: 'Bộ UTM', tag: 'kdvip', cat: 'kdvip', type: 'kdvip', price: '', img: 'images/utm.jpg', link: '1ruiXTUkIidujNOWiuxZMtxhHkjqfFX-l', updateDate: 'Cập nhật 01/06/26' },
+  { name: 'Bộ UVF', tag: 'kdvip', cat: 'kdvip', type: 'kdvip', price: '', img: 'images/uvf.jpg', link: '1t8Sj7490oBEILLxhP-X4zHKp7Kxq-Q30', updateDate: 'Cập nhật 01/06/26' },
+  { name: 'Bộ UVN', tag: 'kdvip', cat: 'kdvip', type: 'kdvip', price: '', img: 'images/uvn.jpg', link: '1rOKCA09uJ0sO9Tow8T7Xiq4sQTfAw-ep', updateDate: 'Cập nhật 01/06/26' },
+  { name: 'Bộ VL', tag: 'kdvip', cat: 'kdvip', type: 'kdvip', price: '', img: 'images/vl.jpg', link: '1YG6_CPMY9BBTW7QllQTDsSgkSAsrgk1l', updateDate: 'Cập nhật 01/06/26' },
+  { name: 'Bộ VN', tag: 'kdvip', cat: 'kdvip', type: 'kdvip', price: '', img: 'images/vn.jpg', link: '1dc6HpKQ4z7KiTY7qToEboSRjPb7qmXHi', updateDate: 'Cập nhật 01/06/26' },
+  { name: 'Bộ VNF', tag: 'kdvip', cat: 'kdvip', type: 'kdvip', price: '', img: 'images/vnf.jpg', link: '1cAC8WEG06G072cFQ_z_phsr_cMj9-l8G', updateDate: 'Cập nhật 01/06/26' },
+  { name: 'Bộ VNI', tag: 'kdvip', cat: 'kdvip', type: 'kdvip', price: '', img: 'images/vni.jpg', link: '1T_iFeuONTDQvZmEnMYNTn0gDCFAR2iou', updateDate: 'Cập nhật 01/06/26' },
 ];
 
 const iconCart = `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
-  <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+<polyline points="7 10 12 15 17 10"/>
+<line x1="12" y1="15" x2="12" y2="3"/>
 </svg>`;
 
 const iconDl = `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -100,6 +123,7 @@ function runFilter() {
   filtered = allFonts.filter(f => {
     let catOk;
     if (currentCat === 'all') {
+      catOk = f.type !== 'kdvip'; // ← thêm dòng này
       catOk = true;
     } else if (currentCat === 'traphi' || currentCat === 'mienphi') {
       catOk = f.type === currentCat;
@@ -114,13 +138,18 @@ function runFilter() {
   document.getElementById('grid').innerHTML = '';
   appendCards();
   document.getElementById('countLabel').textContent = filtered.length + ' font';
+  // Chú thích VIP
+const vipNote = document.getElementById('vipNote');
+if (vipNote) {
+  vipNote.style.display = currentCat === 'kdvip' ? 'block' : 'none';
+}
 }
 
 // Card HTML
 function cardHTML(f) {
   const isFree = f.type === 'mienphi';
+  const isVip = f.type === 'kdvip';
   
-  // Dowload Drive
   const resolvedLink = (f.link && f.link !== '#' && !f.link.startsWith('http'))
     ? `https://drive.google.com/uc?export=download&id=${f.link}`
     : f.link;
@@ -130,7 +159,16 @@ function cardHTML(f) {
     : `<span class="price">${f.price}</span>`;
   const btnHTML = isFree
     ? `<button class="action-btn dl" onclick="window.open('${resolvedLink}','_blank')">${iconDl} Tải về</button>`
-    : `<button class="action-btn buy" onclick="window.open('${resolvedLink}','_blank')">${iconCart} Mua</button>`;
+    : `<button class="action-btn buy" onclick="window.open('${resolvedLink}','_blank')">${iconCart} VIP</button>`;
+
+  const updateBadge = isVip && f.updateDate
+    ? `<span class="update-badge">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+        </svg>
+        ${f.updateDate}
+       </span>`
+    : '';
 
   return `
     <div class="card">
@@ -139,10 +177,11 @@ function cardHTML(f) {
           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="placeholder" style="display:none">${f.name}</div>
       </div>
-      <div>
+      <div class="card-name-row">
         <div class="card-name">${f.name}</div>
-        <div class="card-tag">${f.tag}</div>
+        ${updateBadge}
       </div>
+      <div class="card-tag">${f.tag}</div>
       <div class="card-footer">${priceHTML}${btnHTML}</div>
     </div>`;
 }
