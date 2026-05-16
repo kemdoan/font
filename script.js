@@ -121,27 +121,30 @@ function runFilter() {
   const q = document.getElementById('searchInput').value.toLowerCase().trim();
 
   filtered = allFonts.filter(f => {
+    if (q) {
+      return f.name.toLowerCase().includes(q) || f.tag.toLowerCase().includes(q);
+    }
+
     let catOk;
     if (currentCat === 'all') {
-      catOk = f.type !== 'kdvip'; // ← thêm dòng này
+      catOk = f.type !== 'kdvip';
     } else if (currentCat === 'traphi' || currentCat === 'mienphi') {
       catOk = f.type === currentCat;
     } else {
       catOk = f.cat === currentCat;
     }
-    const searchOk = !q || f.name.toLowerCase().includes(q) || f.tag.toLowerCase().includes(q);
-    return catOk && searchOk;
+    return catOk;
   });
 
   shown = 0;
   document.getElementById('grid').innerHTML = '';
   appendCards();
   document.getElementById('countLabel').textContent = filtered.length + ' font';
-  // Note VIP
-const vipNote = document.getElementById('vipNote');
-if (vipNote) {
-  vipNote.style.display = currentCat === 'kdvip' ? 'block' : 'none';
-}
+
+  const vipNote = document.getElementById('vipNote');
+  if (vipNote) {
+    vipNote.style.display = currentCat === 'kdvip' && !q ? 'block' : 'none';
+  }
 }
 
 // Card HTML
