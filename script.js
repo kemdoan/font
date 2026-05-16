@@ -156,10 +156,12 @@ function cardHTML(f) {
   const priceHTML = isFree
     ? `<span class="price free">Miễn phí</span>`
     : `<span class="price">${f.price}</span>`;
-  const btnHTML = isFree
+    const btnHTML = isFree
     ? `<button class="action-btn dl" onclick="window.open('${resolvedLink}','_blank')">${iconDl} Tải về</button>`
-    : `<button class="action-btn buy" onclick="window.open('${resolvedLink}','_blank')">${iconCart} VIP</button>`;
-
+    : isVip
+      ? `<button class="action-btn dl" onclick="window.open('${resolvedLink}','_blank')">${iconDl} Tải về</button>`
+      : `<button class="action-btn buy" onclick="window.open('${resolvedLink}','_blank')">${iconCart} VIP</button>`;
+      
   const updateBadge = isVip && f.updateDate
     ? `<span class="update-badge">
         <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
