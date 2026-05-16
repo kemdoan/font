@@ -36,7 +36,7 @@ const allFonts = [
   { name: 'KD Midautumn',       tag: 'Font Khác',     cat: 'khac',    type: 'mienphi',  price: '',        img: 'images/kdmidautumn.jpg',          link: '1b-Xqg_Pvzc944VGQMKBukumQeriznL2F' },
   { name: 'KD Cute Tattoo Girl', tag: 'Font Khác',    cat: 'khac',    type: 'traphi',   price: '50k',     img: 'images/kdcutetattoogirl.jpg',     link: '1AIXtW74xODWeAnyJch78bPO9h9d_X8LN' },
   { name: 'KD Estarossa',       tag: 'Font Cưới',     cat: 'cuoi',    type: 'traphi',   price: '50k',     img: 'images/kdestarossa.jpg',          link: '1taLfNWkBPvaN4aCy5MvKJZ_kl0fMIo4V' },
-  { name: 'KD Dallen Bishop',   tag: 'Font Khác',     cat: 'khac',    type: 'traphi',   price: '50k',     img: 'images/kdfallenbishop.jpg',       link: '1tNmBmfuMMqpcDotXDOZfAr3ZQqOD-w3s' },
+  { name: 'KD Fallen Bishop',   tag: 'Font Khác',     cat: 'khac',    type: 'traphi',   price: '50k',     img: 'images/kdfallenbishop.jpg',       link: '1tNmBmfuMMqpcDotXDOZfAr3ZQqOD-w3s' },
   { name: 'KD Fashionwacks',    tag: 'Font Khác',     cat: 'khac',    type: 'mienphi',  price: '',        img: 'images/kdfashionwacks.jpg',       link: '1Fa8I2Q47PK-_KPLgTZ4PY6hkn8mIfF_t' },
   { name: 'KD Fit',             tag: 'Font Khác',     cat: 'khac',    type: 'traphi',   price: '50k',     img: 'images/kdfit.jpg',                link: '1hJa9iQ0KvASIqMjtNYWXbXX0ffOKooxL' },
   { name: 'KD Flourshing',      tag: 'Font Cưới',     cat: 'cuoi',    type: 'traphi',   price: '50k',     img: 'images/kdflourshing.jpg',         link: '1rJHf9CYUYVwn5MtxtGc06qwq6nCDPNy6' },
