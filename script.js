@@ -124,7 +124,6 @@ function runFilter() {
     let catOk;
     if (currentCat === 'all') {
       catOk = f.type !== 'kdvip'; // ← thêm dòng này
-      catOk = true;
     } else if (currentCat === 'traphi' || currentCat === 'mienphi') {
       catOk = f.type === currentCat;
     } else {
