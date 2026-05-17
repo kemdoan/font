@@ -7,6 +7,8 @@ const allFonts = [
   { name: 'KD Netsera',         tag: 'Font Cưới',    cat: 'cuoi',     type: 'traphi',   price: '50k',     img: 'images/kdnetsera.jpg',       link: '1DexKoA1kLiYSkUOimx7kJODVJ1f8CvZ7' },
   { name: 'KD Goken',           tag: 'Font Khác',    cat: 'khac',     type: 'traphi',   price: '50k',     img: 'images/kdgoken.jpg',         link: '1b2O1vybkscQ9PQTWCveA-hCcRzCWXSiE' },
   { name: 'KD Boxroom',         tag: 'Font Khác',    cat: 'khac',     type: 'traphi',   price: '50k',     img: 'images/kdboxroom.jpg',       link: '14nZqyDi7SXmf_C227OrizP4CmTLvN6ob' },
+  { name: 'KD Handscript', tag: 'Font Viết Tay', cat: 'viettay', type: 'preview', price: '300k', img: 'images/kdhandscript.jpg', link: 'http://zalo.me/0559970246', slides: ['images/hs1.jpg', 'images/hs2.jpg', 'images/hs3.jpg', 'images/hs4.jpg'] },
+  { name: 'KD Handwritten', tag: 'Font Viết Tay', cat: 'viettay', type: 'preview', price: 'Liên hệ', img: 'images/kdhandwritten.jpg', link: 'http://zalo.me/0559970246', slides: ['images/hw1.jpg', 'images/hw2.jpg', 'images/hw3.jpg', 'images/hw4.jpg'] },
   { name: 'KD Sulee',           tag: 'Font Chữ Ký',  cat: 'chuky',    type: 'traphi',   price: '50k',     img: 'images/kdsulee.jpg',         link: '18SdCMD2WhSxEl-OHeCsvFxO-mcz8Zmke' },
   { name: 'KD Hongkong',        tag: 'Font Khác',    cat: 'khac',     type: 'traphi',   price: '90k / 3 Style',    img: 'images/kdhongkong.jpg',      link: '1qG0N-tU6mKRC5CZxXQqMO9Q94WcfMtUl' },
   { name: 'KD Valery',          tag: 'Font Cưới',     cat: 'cuoi',    type: 'traphi',   price: '50k',     img: 'images/kdvalery.jpg',             link: '1CiQpd4ugE0FuV1Nmo8APvQ27LxR2Eufa' },
@@ -15,8 +17,6 @@ const allFonts = [
   { name: 'KD Huees',           tag: 'Font Khác',    cat: 'khac',     type: 'traphi',   price: '50k',     img: 'images/kdhuees.jpg',         link: '1qsXoKu7nm_DGpcyAla6gsZFw88hmuLai' },
   { name: 'KD Kem Doan',        tag: 'Font Khác',    cat: 'khac',     type: 'traphi',   price: '50k',     img: 'images/kdkemdoan.jpg',       link: '17j_BgCy0kTpTpNDBRv2Qqpu1guhkY-KD' },
   { name: 'KD Doan Nguyen',     tag: 'Font Khác',    cat: 'khac',     type: 'traphi',   price: '70k / Reg & Bold', img: 'images/kddoannguyen.jpg',       link: '1d3eh5Ge2q_-kgiyv8OHngvXVDOerk0tO' },
-  { name: 'KD Handscript',      tag: 'Font Viết Tay',     cat: 'viettay',    type: 'traphi', price: '300k / No VIP',        img: 'images/kdhandscript.jpg',       link: 'http://zalo.me/0559970246' },
-  { name: 'KD Handwritten',     tag: 'Font Viết Tay', cat: 'viettay', type: 'traphi',   price: 'Liên hệ',          img: 'images/kdhandwritten.jpg',      link: 'http://zalo.me/0559970246' },
   { name: 'KD Wedding Dress',   tag: 'Font Cưới',     cat: 'cuoi',    type: 'traphi',   price: '50k',     img: 'images/kdweddingdress.jpg',       link: '18BGqUzfqFxTfCgPBcIpiZ3S4KshrZ_vZ' },
   { name: 'KD Withlove',        tag: 'Font Cưới',     cat: 'cuoi',    type: 'traphi',   price: '50k',     img: 'images/kdwithlove.jpg',           link: '1gM8WdO1eWV1oaHgrWRfeKrL8m8vKc5T8' },
   { name: 'KD Hidayatullah',    tag: 'Font Khác',     cat: 'khac',    type: 'mienphi',  price: '',        img: 'images/kdhidayatullah.jpg',       link: '1Ezwn8hE0hfGjUQq3y64dqlUXMAdtV4qx' },
@@ -159,11 +159,15 @@ function cardHTML(f) {
   const priceHTML = isFree
     ? `<span class="price free">Miễn phí</span>`
     : `<span class="price">${f.price}</span>`;
+    const isPreview = f.type === 'preview';
+
     const btnHTML = isFree
-    ? `<button class="action-btn dl" onclick="window.open('${resolvedLink}','_blank')">${iconDl} Tải về</button>`
-    : isVip
-      ? `<button class="action-btn dl" onclick="window.open('${resolvedLink}','_blank')">${iconDl} Tải về</button>`
-      : `<button class="action-btn buy" onclick="window.open('${resolvedLink}','_blank')">${iconCart} VIP</button>`;
+        ? `<button class="action-btn dl" onclick="window.open('${resolvedLink}','_blank')">${iconDl} Tải về</button>`
+        : isVip
+        ? `<button class="action-btn dl" onclick="window.open('${resolvedLink}','_blank')">${iconDl} Tải về</button>`
+        : isPreview
+        ? `<button class="action-btn buy" onclick='openSlideModal(${JSON.stringify(f.slides)})'>${iconDl} Xem thêm</button>`
+        : `<button class="action-btn buy" onclick="window.open('${resolvedLink}','_blank')">${iconCart} VIP</button>`;
       
   const updateBadge = isVip && f.updateDate
     ? `<span class="update-badge">
@@ -262,3 +266,34 @@ document.addEventListener('keydown', function(e) {
     }
   }
 });
+
+let slideImages = [];
+let slideIndex = 0;
+
+function openSlideModal(slides) {
+  slideImages = slides;
+  slideIndex = 0;
+  updateSlide();
+  const modal = document.getElementById('slideModal');
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeSlideModal(e) {
+  if (e && e.target !== document.getElementById('slideModal')) return;
+  document.getElementById('slideModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+function changeSlide(dir) {
+  slideIndex = (slideIndex + dir + slideImages.length) % slideImages.length;
+  updateSlide();
+}
+
+function updateSlide() {
+  document.getElementById('slideImg').src = slideImages[slideIndex];
+  const dots = document.getElementById('slideDots');
+  dots.innerHTML = slideImages.map((_, i) =>
+    `<span class="dot ${i === slideIndex ? 'active' : ''}" onclick="slideIndex=${i};updateSlide()"></span>`
+  ).join('');
+}
