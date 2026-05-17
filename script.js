@@ -7,7 +7,7 @@ const allFonts = [
   { name: 'KD Netsera',         tag: 'Font Cưới',    cat: 'cuoi',     type: 'traphi',   price: '50k',     img: 'images/kdnetsera.jpg',       link: '1DexKoA1kLiYSkUOimx7kJODVJ1f8CvZ7' },
   { name: 'KD Goken',           tag: 'Font Khác',    cat: 'khac',     type: 'traphi',   price: '50k',     img: 'images/kdgoken.jpg',         link: '1b2O1vybkscQ9PQTWCveA-hCcRzCWXSiE' },
   { name: 'KD Boxroom',         tag: 'Font Khác',    cat: 'khac',     type: 'traphi',   price: '50k',     img: 'images/kdboxroom.jpg',       link: '14nZqyDi7SXmf_C227OrizP4CmTLvN6ob' },
-  { name: 'KD Handscript', tag: 'Font Viết Tay', cat: 'viettay', type: 'preview', price: '300k', img: 'images/kdhandscript.jpg', link: 'http://zalo.me/0559970246', slides: ['images/hs1.jpg', 'images/hs2.jpg', 'images/hs3.jpg', 'images/hs4.jpg'] },
+  { name: 'KD Handscript', tag: 'Font Viết Tay', cat: 'viettay', type: 'preview', price: 'Liên hệ', img: 'images/kdhandscript.jpg', link: 'http://zalo.me/0559970246', slides: ['images/hs1.jpg', 'images/hs2.jpg', 'images/hs3.jpg', 'images/hs4.jpg'] },
   { name: 'KD Handwritten', tag: 'Font Viết Tay', cat: 'viettay', type: 'preview', price: 'Liên hệ', img: 'images/kdhandwritten.jpg', link: 'http://zalo.me/0559970246', slides: ['images/hw1.jpg', 'images/hw2.jpg', 'images/hw3.jpg', 'images/hw4.jpg'] },
   { name: 'KD Sulee',           tag: 'Font Chữ Ký',  cat: 'chuky',    type: 'traphi',   price: '50k',     img: 'images/kdsulee.jpg',         link: '18SdCMD2WhSxEl-OHeCsvFxO-mcz8Zmke' },
   { name: 'KD Hongkong',        tag: 'Font Khác',    cat: 'khac',     type: 'traphi',   price: '90k / 3 Style',    img: 'images/kdhongkong.jpg',      link: '1qG0N-tU6mKRC5CZxXQqMO9Q94WcfMtUl' },
