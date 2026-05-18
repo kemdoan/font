@@ -56,7 +56,7 @@ const allFonts = [
   { name: 'KD Yon Love',        tag: 'Font Khác',     cat: 'khac',     type: 'mienphi', img: 'images/kdyonlove.jpg',       link: '1CkgxirVfbSgkaMRLaXk9gWmrHsKqNMzS' },
   { name: 'KD Zoika',           tag: 'Font Khác',     cat: 'khac',     type: 'mienphi', img: 'images/kdzoika.jpg',         link: '1tVxUfTcBy3l1jJoNRcdVQkaQkhYMGgSs' },
   { name: 'Tổng hợp',  tag: '', cat: 'kdvip', type: 'kdvip', img: 'images/full.jpg', link: '1u1XxgSP8HLlpweeeTEe46gLOT-FY-dEQ', updateDate: 'Cập nhật 16/05/26' },
-  { name: 'Bộ KD',     tag: '', cat: 'kdvip', type: 'kdvip', img: 'images/kd.jpg', link: '1u1XxgSP8HLlpweeeTEe46gLOT-FY-dEQ', updateDate: 'Cập nhật 16/05/26' },
+  { name: 'Bộ KD',     tag: '', cat: 'kdvip', type: 'kdvip', img: 'images/kd.jpg',   link: '1vgcFX7IAhI6HOyq5C3oI0mY7f8LZHkwE', updateDate: 'Cập nhật 16/05/26' },
   { name: 'Bộ 1FTV',   tag: '', cat: 'kdvip', type: 'kdvip', img: 'images/1ftv.jpg', link: '1aIiSUrC8-ry-xF5WxSjJAwaM76A5Ay0R', updateDate: 'Cập nhật 16/05/26' },
   { name: 'Bộ DFVN',   tag: '', cat: 'kdvip', type: 'kdvip', img: 'images/dfvn.jpg', link: '16ynZsiQRuh9Nd9YywVpCYUS1Fy5L7hvW', updateDate: 'Cập nhật 16/05/26' },
   { name: 'Bộ FZ',     tag: '', cat: 'kdvip', type: 'kdvip', img: 'images/fz.jpg',   link: '16ynZsiQRuh9Nd9YywVpCYUS1Fy5L7hvW', updateDate: 'Cập nhật 16/05/26' },
