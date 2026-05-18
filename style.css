@@ -125,8 +125,13 @@ body {
 }
 
 
-.btn-zalo { color: var(--text-muted); }
-.btn-fb   { color: var(--text-muted); }
+.btn-zalo {
+  color: var(--text-muted);
+}
+
+.btn-fb {
+  color: var(--text-muted);
+}
 
 /* ── SEARCH ── */
 .search-wrap {
@@ -557,7 +562,6 @@ body {
 
 .kd-finder-title {
   font-size: 1.2rem;
-  font-weight: 600;
   color: var(--text);
   letter-spacing: 0.5px;
   margin: 0;
