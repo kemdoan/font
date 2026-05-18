@@ -7,8 +7,8 @@ const allFonts = [
   { name: 'KD Netsera',         tag: 'Font Cưới',     cat: 'cuoi',     type: 'traphi',   price: '50k',    img: 'images/kdnetsera.jpg',       link: '1DexKoA1kLiYSkUOimx7kJODVJ1f8CvZ7' },
   { name: 'KD Goken',           tag: 'Font Khác',     cat: 'khac',     type: 'traphi',   price: '50k',    img: 'images/kdgoken.jpg',         link: '1b2O1vybkscQ9PQTWCveA-hCcRzCWXSiE' },
   { name: 'KD Boxroom',         tag: 'Font Khác',     cat: 'khac',     type: 'traphi',   price: '50k',    img: 'images/kdboxroom.jpg',       link: '14nZqyDi7SXmf_C227OrizP4CmTLvN6ob' },
-  { name: 'KD Handscript',      tag: 'Font Viết Tay', cat: ['viettay', 'cuoi'], type: 'preview', price: 'Liên hệ', img: 'images/kdhandscript.jpg',  link: 'http://zalo.me/0559970246', slides: ['images/hs1.jpg', 'images/hs2.jpg', 'images/hs3.jpg', 'images/hs4.jpg'] },
   { name: 'KD Handwritten',     tag: 'Font Viết Tay', cat: ['viettay', 'cuoi'], type: 'preview', price: 'Liên hệ', img: 'images/kdhandwritten.jpg', link: 'http://zalo.me/0559970246', slides: ['images/hw1.jpg', 'images/hw2.jpg', 'images/hw3.jpg', 'images/hw4.jpg'] },
+  { name: 'KD Handscript',      tag: 'Font Viết Tay', cat: ['viettay', 'cuoi'], type: 'preview', price: 'Liên hệ', img: 'images/kdhandscript.jpg',  link: 'http://zalo.me/0559970246', slides: ['images/hs1.jpg', 'images/hs2.jpg', 'images/hs3.jpg', 'images/hs4.jpg'] },
   { name: 'KD Sulee',           tag: 'Font Chữ Ký',   cat: ['viettay','chuky'],    type: 'traphi',   price: '50k',     img: 'images/kdsulee.jpg',         link: '18SdCMD2WhSxEl-OHeCsvFxO-mcz8Zmke' },
   { name: 'KD Hongkong',        tag: 'Font Khác',     cat: 'khac',     type: 'traphi',   price: '90k / 3 Style',    img: 'images/kdhongkong.jpg', link: '1qG0N-tU6mKRC5CZxXQqMO9Q94WcfMtUl' },
   { name: 'KD Valery',          tag: 'Font Cưới',     cat: 'cuoi',     type: 'traphi',   price: '50k',    img: 'images/kdvalery.jpg',             link: '1CiQpd4ugE0FuV1Nmo8APvQ27LxR2Eufa' },
@@ -80,17 +80,8 @@ const allFonts = [
   { name: 'Bộ VNI',     tag: 'kdvip', cat: 'kdvip', type: 'kdvip', price: '', img: 'images/vni.jpg',  link: '1T_iFeuONTDQvZmEnMYNTn0gDCFAR2iou', updateDate: 'Cập nhật 16/05/26' },
 ];
 
-const iconCart = `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-<polyline points="7 10 12 15 17 10"/>
-<line x1="12" y1="15" x2="12" y2="3"/>
-</svg>`;
-
-const iconDl = `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-  <polyline points="7 10 12 15 17 10"/>
-  <line x1="12" y1="15" x2="12" y2="3"/>
-</svg>`;
+const iconCart = `<i class="ri-download-cloud-2-line"></i>`;
+const iconDl = `<i class="ri-download-cloud-2-line"></i>`;
 
 const PAGE_SIZE = 24;
 let currentCat = 'all';
@@ -151,6 +142,7 @@ function runFilter() {
 function cardHTML(f) {
   const isFree = f.type === 'mienphi';
   const isVip = f.type === 'kdvip';
+  const iconMore = `<i class="ri-image-line"></i>`;
   
   const resolvedLink = (f.link && f.link !== '#' && !f.link.startsWith('http'))
     ? `https://drive.google.com/uc?export=download&id=${f.link}`
@@ -166,17 +158,15 @@ function cardHTML(f) {
         : isVip
         ? `<button class="action-btn dl" onclick="window.open('${resolvedLink}','_blank')">${iconDl} Tải về</button>`
         : isPreview
-        ? `<button class="action-btn buy" onclick='openSlideModal(${JSON.stringify(f.slides)})'>${iconDl} Xem thêm</button>`
+        ? `<button class="action-btn dl" onclick='openSlideModal(${JSON.stringify(f.slides)})'>${iconMore} Xem thêm</button>`
         : `<button class="action-btn buy" onclick="window.open('${resolvedLink}','_blank')">${iconCart} VIP</button>`;
       
   const updateBadge = isVip && f.updateDate
-    ? `<span class="update-badge">
-        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
-        </svg>
-        ${f.updateDate}
-       </span>`
-    : '';
+        ? `<span class="update-badge">
+         <i class="ri-time-line"></i>
+         ${f.updateDate}
+        </span>`
+        : '';
 
   return `
     <div class="card">
