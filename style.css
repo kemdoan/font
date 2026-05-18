@@ -884,6 +884,7 @@ body {
 .vip-qr {
   width: 100%;
   border-radius: 12px;
+  box-shadow: var(--box-shadow-img);
   object-fit: contain;
 }
 
