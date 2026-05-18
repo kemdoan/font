@@ -581,7 +581,7 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: var(--text);
 }
 .kd-finder-features li svg {
@@ -836,23 +836,28 @@ body {
 #vipModal .kd-modal {
   max-height: 90vh;
   overflow-y: auto;
-  width: 90vw;
+  width: 100vw;
   max-width: 1000px;
 }
 
 .vip-info, .vip-payment {
-  flex: 1;
+  flex: 1.5;
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 
+.vip-payment {
+  flex: 1;
+}
+
 .vip-title {
   color: var(--buy);
-  font-size: 1.1rem;
+  font-size: 1rem;
   display: flex;
   align-items: center;
   gap: 8px;
+  letter-spacing: 0.5px;
 }
 
 .vip-features, .vip-bank {
@@ -872,7 +877,8 @@ body {
 }
 
 .vip-qr {
-  width: 70%;
+  width: 100%;
   border-radius: 12px;
   object-fit: contain;
 }
+
