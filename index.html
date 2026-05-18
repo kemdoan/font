@@ -34,6 +34,8 @@
   <meta name="apple-mobile-web-app-title" content="Font - Kem Đoàn">
   <link rel="apple-touch-icon" href="https://kemdoan.github.io/font/images/logo.png">
   <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Manrope' rel='stylesheet'>
 </head>
 <body>
 
@@ -48,11 +50,11 @@
       <p>Design & Việt hóa font</p>
       <div class="contact-row">
         <a href="http://zalo.me/0559970246" target="_blank" rel="noopener" class="btn-nm btn-zalo">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M7.29117 20.8242L2 22L3.17581 16.7088C2.42544 15.3056 2 13.7025 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C10.2975 22 8.6944 21.5746 7.29117 20.8242Z"/></svg>
+          <i class="ri-chat-3-fill"></i>
           Zalo
         </a>
         <a href="https://www.facebook.com/fontkemdoan/" target="_blank" rel="noopener" class="btn-nm btn-fb">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          <i class="ri-facebook-circle-fill"></i>
           Facebook
         </a>
       </div>
@@ -61,11 +63,11 @@
 
   <div class="search-wrap">
     <span class="search-icon-left">
-      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <i class="ri-search-line"></i>
     </span>
     <input class="search-box" type="text" id="searchInput" placeholder="Tìm font..." oninput="onSearch()">
     <button class="search-clear" id="clearBtn" onclick="clearSearch()">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      <i class="ri-close-circle-fill"></i>
     </button>
   </div>
 
@@ -115,13 +117,11 @@
         </ul>
         <div class="kd-finder-btns">
           <a href="http://zalo.me/0559970246" class="kd-finder-btn" target="_blank" rel="noopener">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M7.29117 20.8242L2 22L3.17581 16.7088C2.42544 15.3056 2 13.7025 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C10.2975 22 8.6944 21.5746 7.29117 20.8242Z"/></svg>
+            <i class="ri-chat-3-fill"></i>
             Liên hệ
           </a>
           <a href="https://drive.google.com/file/d/1WKED6F2CMCtNs6SRWuNm7eq0U_EwepzJ/" class="kd-finder-btn kd-finder-btn--download" target="_blank" rel="noopener">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/>
-            </svg>
+            <i class="ri-windows-fill"></i>
             Tải App
           </a>
         </div>
@@ -163,9 +163,9 @@
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
     </button>
     <div class="slide-img-wrap">
-      <button class="slide-arrow slide-arrow-left" onclick="changeSlide(-1)">&#8592;</button>
+      <button class="slide-arrow slide-arrow-left" onclick="changeSlide(-1)"><i class="ri-arrow-left-s-line"></i></button>
       <img id="slideImg" src="" alt="preview">
-      <button class="slide-arrow slide-arrow-right" onclick="changeSlide(1)">&#8594;</button>
+      <button class="slide-arrow slide-arrow-right" onclick="changeSlide(1)"><i class="ri-arrow-right-s-line"></i></button>
     </div>
     <div class="slide-dots" id="slideDots"></div>
     <!--<a id="slideContact" href="http://zalo.me/0559970246" class="kd-finder-btn" target="_blank" rel="noopener">
@@ -179,7 +179,7 @@
 
   <!-- Back to top -->
   <button class="backtotop-btn">
-    ↑
+    <i class="ri-arrow-up-s-line"></i>
   </button>
 
 <!-- FOOTER -->
