@@ -57,6 +57,10 @@
           <i class="ri-facebook-circle-fill"></i>
           Facebook
         </a>
+        <button class="btn-nm btn-vip" onclick="openVipModal()">
+          <i class="ri-vip-crown-line"></i>
+          Đăng ký tải font VIP
+        </button>
       </div>
     </div>
   </div>
@@ -86,7 +90,7 @@
 <div class="kd-modal-overlay" id="kdModal" onclick="closeFontFinder(event)">
   <div class="kd-modal">
     <button class="kd-modal-close" onclick="closeFontFinder()">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      <i class="ri-close-line"></i>
     </button>
     <div class="kd-modal-body">
       <div class="kd-modal-info">
@@ -102,15 +106,15 @@
         </div>
         <ul class="kd-finder-features">
           <li>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <i class="ri-check-line"></i>
             Tặng kèm khi mua bộ font KD Việt hóa<br>Được Update khi có tính năng mới.
           </li>
           <li>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <i class="ri-check-line"></i>
             Tặng kèm 8000 font việt hóa khác.<br>Được Update khi có thêm nhiều font mới.
           </li>
           <li>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <i class="ri-check-line"></i>
             Full bộ KD Việt hóa<br>Giá: 300k.
           </li>
           <li>
@@ -174,6 +178,51 @@
     </a> -->
   </div>
 </div>
+  </div>
+</div>
+
+<div class="kd-modal-overlay" id="vipModal" onclick="closeVipModal(event)">
+  <div class="kd-modal" style="max-width:700px; width:90vw">
+    <button class="kd-modal-close" onclick="closeVipModal()">
+      <i class="ri-close-line"></i>
+    </button>
+    <div class="kd-modal-body vip-modal-body">
+
+      <div class="vip-info">
+        <h2 class="vip-title"><i class="ri-vip-crown-line"></i> Gói tải font VIP</h2>
+        <ul class="vip-features">
+          <li><i class="ri-download-cloud-2-line"></i> Tải font VIP không giới hạn</li>
+          <li><i class="ri-time-line"></i> Thời hạn vĩnh viễn</li>
+          <li><i class="ri-price-tag-3-line"></i> Giá 300k</li>
+          <hr>
+          <li><i>• Kinh phí dùng để duy trì và việt hóa font.<br>
+            • vui lòng không share lại font dưới bất kì hình thức nào. <br>
+            • Nếu phát hiện share font sẽ bị khóa tài khoản.<br>
+            • Font - Kem Đoàn xin chân thành cảm ơn quý khách.</i> </li>
+        </ul>
+        <div class="kd-finder-btns">
+          <a href="http://zalo.me/0559970246" class="kd-finder-btn" target="_blank" rel="noopener">
+            <i class="ri-chat-3-fill"></i>
+            Zalo
+          </a>
+          <a href="https://www.facebook.com/fontkemdoan/" class="kd-finder-btn kd-finder-btn--download" target="_blank" rel="noopener">
+            <i class="ri-facebook-circle-fill"></i>
+            Facebook
+          </a>
+        </div>
+      </div>
+
+      <div class="vip-payment">
+        <h2 class="vip-title"><i class="ri-wallet-3-line"></i> Tài khoản thanh toán</h2>
+        <img src="images/qr.png" alt="QR Thanh toán" class="vip-qr">
+        <ul class="vip-bank">
+          <li><i class="ri-bank-line"></i> Vietcombank</li>
+          <li><i class="ri-bank-card-line"></i> 1017381370</li>
+          <li><i class="ri-user-line"></i> Doan Nguyen Bao Thanh</li>
+        </ul>
+      </div>
+
+    </div>
   </div>
 </div>
 
