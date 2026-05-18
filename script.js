@@ -151,7 +151,7 @@ function cardHTML(f) {
     const isPreview = f.type === 'preview';
 
     const priceHTML = isFree
-    ? `<span class="price free">Miễn phí</span>`
+    ? `<span class="price free">FREE</span>`
     : isVip
         ? `<span></span>`
       : isPreview
