@@ -806,3 +806,73 @@ body {
 .dot.active {
   background: var(--primary, #666fff);
 }
+
+.btn-vip {
+  background: var(--pinkgradient);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: 'KDAPPFONT';
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.vip-modal-body {
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+  padding: 32px;
+}
+
+@media (max-width: 640px) {
+  .vip-modal-body {
+    flex-direction: column;
+    padding: 24px;
+  }
+}
+
+#vipModal .kd-modal {
+  max-height: 90vh;
+  overflow-y: auto;
+  width: 90vw;
+  max-width: 1000px;
+}
+
+.vip-info, .vip-payment {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.vip-title {
+  color: var(--buy);
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.vip-features, .vip-bank {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 1rem;
+}
+
+.vip-features li, .vip-bank li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.vip-qr {
+  width: 70%;
+  border-radius: 12px;
+  object-fit: contain;
+}
