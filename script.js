@@ -136,6 +136,11 @@ function runFilter() {
   if (vipNote) {
     vipNote.style.display = currentCat === 'kdvip' && !q ? 'block' : 'none';
   }
+
+  const allNote = document.getElementById('allNote');
+  if (allNote) {
+    allNote.style.display = currentCat === 'all' && !q ? 'block' : 'none';
+  }
 }
 
 // Card HTML
