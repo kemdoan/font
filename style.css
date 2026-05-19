@@ -31,7 +31,7 @@
       inset 4px 4px 8px #d9dae0,
       inset -4px -4px 8px #fff;
   --bluegradient: linear-gradient(90deg, #938dff, #666fff);
-  --yellowgradient: linear-gradient(90deg, #e6c349, #ff984c);
+  --yellowgradient: linear-gradient(90deg, #ffde68, #ffb179);
   --greengradient: linear-gradient(90deg, #62f4e1, #50daea);
   --pinkgradient: linear-gradient(90deg, #ff95b0, #ff6990);
 }
@@ -110,7 +110,7 @@ body {
   border: none;
   background: var(--bg);
   box-shadow: var(--box-shadow-btn);
-  color: var(--text);
+  color: var(--text-muted);
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -206,7 +206,7 @@ body {
 }
 
 .chip {
-  padding: 9px 18px;
+  padding: 9px 20px;
   border-radius: 50px;
   font-size: 1rem;
   line-height: 1.2;
@@ -887,4 +887,136 @@ body {
   box-shadow: var(--box-shadow-img);
   object-fit: contain;
 }
+
+/* banggia */
+.page-pricing {
+  flex: 1;
+  padding: 32px 24px 48px;
+}
+
+.pricing-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 1024px) {
+  .pricing-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .pricing-grid { grid-template-columns: 1fr; }
+}
+
+.pricing-card {
+  background: var(--bg);
+  box-shadow: var(--box-shadow);
+  border-radius: 20px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pricing-card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pricing-card-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  box-shadow: var(--box-shadow-btn);
+}
+
+.icon-vip   { background: var(--bluegradient);   color: #fff; }
+.icon-viet  { background: var(--pinkgradient);   color: #fff; }
+.icon-guide { background: var(--yellowgradient); color: #fff; }
+.icon-pay   { background: var(--greengradient);  color: #fff; }
+
+.pricing-card-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: 0.4px;
+}
+
+.pricing-divider {
+  height: 1px;
+  background: linear-gradient(90deg, #d9dae0, transparent);
+  border: none;
+}
+
+.pricing-section-label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.pricing-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pricing-list li {
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 1rem;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.pricing-list li i {
+  color: var(--buy);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.pricing-list li.muted {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.pricing-list li.muted i {
+  color: var(--text-muted);
+}
+
+.pricing-sub {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.pricing-sub-title {
+  font-size: 1rem;
+  color: var(--buy);
+}
+
+.pricing-sub-price {
+  font-size: 1rem;
+  color: var(--text);
+  padding-left: 20px;
+}
+
 
