@@ -70,7 +70,7 @@ const allFonts = [
   { name: 'Bộ NVN',    tag: '', cat: 'kdvip', type: 'kdvip', img: 'images/nvn.jpg',  link: '1f98t04UhJKk45tR_wTJTiULUBCemoiEw', updateDate: 'Cập nhật 16/05/26' },
   { name: 'Bộ SFU',    tag: '', cat: 'kdvip', type: 'kdvip', img: 'images/sfu.jpg',  link: '1Iohwo5iwyi2SVmuKIhib-m1_MRgGPtjy', updateDate: 'Cập nhật 16/05/26' },
   { name: 'Bộ SVN',    tag: '', cat: 'kdvip', type: 'kdvip', img: 'images/svn.jpg',  link: '1Wl17mohHelZx7agZBqvbp8HKqNJiIIus', updateDate: 'Cập nhật 16/05/26' },
-  { name: 'Bộ TQ',     tag: '', cat: 'kdvip', type: 'kdvip', img: 'images/tq.jpg',   link: '/font/tq',                                  updateDate: 'Chờ cập nhật' },
+  { name: 'Bộ TQ',     tag: '', cat: 'kdvip', type: 'kdvip', img: 'images/tq.jpg',   link: 'https://kemdoan.github.io/font/tq', updateDate: 'Cập nhật 16/05/26' },
   { name: 'Bộ UTM',    tag: '', cat: 'kdvip', type: 'kdvip', img: 'images/utm.jpg',  link: '1ruiXTUkIidujNOWiuxZMtxhHkjqfFX-l', updateDate: 'Cập nhật 16/05/26' },
   { name: 'Bộ UVF',    tag: '', cat: 'kdvip', type: 'kdvip', img: 'images/uvf.jpg',  link: '1t8Sj7490oBEILLxhP-X4zHKp7Kxq-Q30', updateDate: 'Cập nhật 16/05/26' },
   { name: 'Bộ UVN',    tag: '', cat: 'kdvip', type: 'kdvip', img: 'images/uvn.jpg',  link: '1rOKCA09uJ0sO9Tow8T7Xiq4sQTfAw-ep', updateDate: 'Cập nhật 16/05/26' },
