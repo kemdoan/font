@@ -30,10 +30,10 @@
   --active-btn:
       inset 4px 4px 8px #d9dae0,
       inset -4px -4px 8px #fff;
-  --bluegradient: linear-gradient(90deg, #938dff, #666fff);
+  --bluegradient: linear-gradient(90deg, #9994ff, #666fff);
   --yellowgradient: linear-gradient(90deg, #ffde68, #ffb179);
-  --greengradient: linear-gradient(90deg, #62f4e1, #50daea);
-  --pinkgradient: linear-gradient(90deg, #ff95b0, #ff6990);
+  --greengradient: linear-gradient(90deg, #67ffeb, #4ad8e8);
+  --pinkgradient: linear-gradient(90deg, #ff9eb6, #ff6990);
 }
 
 html, body { height: 100%; }
@@ -222,7 +222,6 @@ body {
 }
 
 .chip.active {
-  
   background: var(--bluegradient);
   color: #fff;
 }
