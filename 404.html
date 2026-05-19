@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="images/favicon-512.png">
+  <title>Font - Kem Đoàn</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" rel="stylesheet">
+  <style>
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .page-404 {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 24px;
+    }
+
+    .error-box {
+      border-radius: 28px;
+      padding: 52px 48px;
+      max-width: 700px;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .error-left {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .error-right {
+      flex-shrink: 0;
+    }
+
+    .error-code {
+      font-size: 5rem;
+      font-weight: 700;
+      background: var(--bluegradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+      letter-spacing: 2px;
+    }
+
+    .error-title {
+      font-size: 1.1rem;
+      color: var(--text);
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .error-desc {
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .error-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn-home {
+      padding: 9px 20px;
+      border-radius: 50px;
+      border: none;
+      background: var(--bluegradient);
+      color: #fff;
+      font-size: 1rem;
+      letter-spacing: 0.3px;
+      font-family: 'KD Web Font', sans-serif;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      box-shadow: var(--box-shadow-btn);
+      transition: opacity 0.15s;
+    }
+
+    .btn-home:hover {
+         background: var(--pinkgradient);
+    }
+
+    @media (max-width: 640px) {
+      .error-box {
+        flex-direction: column-reverse;
+        padding: 36px 28px;
+        text-align: center;
+      }
+      .error-actions { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page-404">
+  <div class="error-box">
+    <div class="error-left">
+      <div class="error-code">404</div>
+      <div class="error-title">Kem đã tan chảy rồi <i class="ri-emotion-unhappy-line"></i></div>
+      <p class="error-desc">Font bạn tìm kiếm không tồn tại hoặc đã bị xóa.</p>
+      <div class="error-actions">
+        <a href="/font/" class="btn-home">
+          <i class="ri-home-3-line"></i> Về trang chủ
+        </a>
+      </div>
+    </div>
+    <div class="error-right">
+      <img src="images/404.png" alt="404" style="width:180px;">
+    </div>
+  </div>
+</div>
+
+<div class="footer">© Kem Đoàn</div>
+
+</body>
+</html>
