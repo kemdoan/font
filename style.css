@@ -298,12 +298,6 @@ body {
   letter-spacing: 0.5px;
 }
 
-.card-tag {
-  font-size: 0rem;
-  color: var(--text-muted);
-  margin-top: 2px;
-}
-
 .card-footer {
   display: flex;
   align-items: center;
@@ -1015,5 +1009,3 @@ body {
   color: var(--text);
   padding-left: 20px;
 }
-
-
