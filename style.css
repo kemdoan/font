@@ -1031,6 +1031,11 @@ body {
   to   { transform: rotate(360deg); }
 }
 
+.ri-spin {
+  display: inline-block;
+  animation: spin 1s linear infinite;
+}
+
 .action-btn.dl:disabled {
   background: var(--pinkgradient) !important;
   color: #fff !important;
