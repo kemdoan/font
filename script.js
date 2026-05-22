@@ -166,7 +166,7 @@ function cardHTML(f) {
         const btnHTML = isFree
         ? `<button class="action-btn dl" onclick="downloadFont(this,'${resolvedLink}')">${iconDl} Tải font</button>`
         : isVip
-          ? `<button class="action-btn dl" onclick="downloadFont(this,'${resolvedLink}')">${iconDl} Tải về</button>`
+          ? `<button class="action-btn dl" onclick="window.open('${resolvedLink}','_blank')">${iconDl} Tải về</button>`
           : isPreview
           ? `<button class="action-btn dl" onclick='openSlideModal(${JSON.stringify(f.slides)})'>${iconMore} Xem thêm</button>`
           : `<button class="action-btn buy" onclick="downloadFont(this,'${resolvedLink}')">${iconCart} Tải font</button>`;
