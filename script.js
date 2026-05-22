@@ -6,22 +6,22 @@ const allFonts = [
   { name: 'KD Netsera',         cat: 'cuoi',     type: 'traphi',  img: 'images/kdnetsera.jpg',       link: '1DexKoA1kLiYSkUOimx7kJODVJ1f8CvZ7' },
   { name: 'KD Goken',           cat: 'khac',     type: 'traphi',  img: 'images/kdgoken.jpg',         link: '1b2O1vybkscQ9PQTWCveA-hCcRzCWXSiE' },
   { name: 'KD Boxroom',         cat: 'khac',     type: 'traphi',  img: 'images/kdboxroom.jpg',       link: '14nZqyDi7SXmf_C227OrizP4CmTLvN6ob' },
-  { name: 'KD Handwritten',     cat: ['viettay', 'cuoi'], type: 'preview', price: 'Liên hệ', img: 'images/kdhandwritten.jpg', link: 'http://zalo.me/0559970246', slides: ['images/hw1.jpg', 'images/hw2.jpg', 'images/hw3.jpg', 'images/hw4.jpg'] },
-  { name: 'KD Handscript',      cat: ['viettay', 'cuoi'], type: 'preview', price: 'Liên hệ', img: 'images/kdhandscript.jpg',  link: 'http://zalo.me/0559970246', slides: ['images/hs1.jpg', 'images/hs2.jpg', 'images/hs3.jpg', 'images/hs4.jpg'] },
-  { name: 'KD Sulee',           cat: ['viettay','chuky'], type: 'traphi',  img: 'images/kdsulee.jpg',         link: '18SdCMD2WhSxEl-OHeCsvFxO-mcz8Zmke' },
-  { name: 'KD Hongkong',        cat: 'khac',     type: 'traphi',  img: 'images/kdhongkong.jpg',      link: '1qG0N-tU6mKRC5CZxXQqMO9Q94WcfMtUl' },
+  { name: 'KD Handwritten',     cat: ['viettay', 'cuoi'], type: 'preview', price: 'Liên hệ',         img: 'images/kdhandwritten.jpg', link: 'http://zalo.me/0559970246', slides: ['images/hw1.jpg', 'images/hw2.jpg', 'images/hw3.jpg', 'images/hw4.jpg'] },
+  { name: 'KD Handscript',      cat: ['viettay', 'cuoi'], type: 'preview', price: 'Liên hệ',         img: 'images/kdhandscript.jpg',  link: 'http://zalo.me/0559970246', slides: ['images/hs1.jpg', 'images/hs2.jpg', 'images/hs3.jpg', 'images/hs4.jpg'] },
+  { name: 'KD Sulee',           cat: ['viettay','chuky'], type: 'traphi',  img: 'images/kdsulee.jpg',link: '18SdCMD2WhSxEl-OHeCsvFxO-mcz8Zmke' },
+  { name: 'KD Hongkong',        cat: 'khac',     type: 'traphi', img: 'images/kdhongkong.jpg',       link: '1qG0N-tU6mKRC5CZxXQqMO9Q94WcfMtUl', style: '3 style' },
   { name: 'KD Valery',          cat: 'cuoi',     type: 'traphi',  img: 'images/kdvalery.jpg',        link: '1CiQpd4ugE0FuV1Nmo8APvQ27LxR2Eufa' },
-  { name: 'KD Lemaire',         cat: 'cuoi',     type: 'traphi',  img: 'images/kdlemaire.jpg',       link: '1j0tWnOrhLm5S5oTQiUyiM6TPKXiSvtlQ' },
+  { name: 'KD Doan Nguyen',     cat: 'khac',     type: 'traphi',  img: 'images/kddoannguyen.jpg',    link: '1d3eh5Ge2q_-kgiyv8OHngvXVDOerk0tO', style: '2 style' },
   { name: 'KD Kaelyna Script',  cat: 'cuoi',     type: 'mienphi', img: 'images/kdkaelynascript.jpg', link: '1OG0Aq95FJM4gxVVzO37Tw7-aPOugEpbl' },
   { name: 'KD Huees',           cat: 'khac',     type: 'traphi',  img: 'images/kdhuees.jpg',         link: '1qsXoKu7nm_DGpcyAla6gsZFw88hmuLai' },
   { name: 'KD Kem Doan',        cat: 'khac',     type: 'traphi',  img: 'images/kdkemdoan.jpg',       link: '17j_BgCy0kTpTpNDBRv2Qqpu1guhkY-KD' },
-  { name: 'KD Doan Nguyen',     cat: 'khac',     type: 'traphi',  img: 'images/kddoannguyen.jpg',    link: '1d3eh5Ge2q_-kgiyv8OHngvXVDOerk0tO' },
+  { name: 'KD Lemaire',         cat: 'cuoi',     type: 'traphi',  img: 'images/kdlemaire.jpg',       link: '1j0tWnOrhLm5S5oTQiUyiM6TPKXiSvtlQ' },
   { name: 'KD Wedding Dress',   cat: 'cuoi',     type: 'traphi',  img: 'images/kdweddingdress.jpg',  link: '18BGqUzfqFxTfCgPBcIpiZ3S4KshrZ_vZ' },
   { name: 'KD Withlove',        cat: ['viettay', 'cuoi'], type: 'traphi',  img: 'images/kdwithlove.jpg',      link: '1gM8WdO1eWV1oaHgrWRfeKrL8m8vKc5T8' },
   { name: 'KD Hidayatullah',    cat: 'khac',     type: 'mienphi', img: 'images/kdhidayatullah.jpg',  link: '1Ezwn8hE0hfGjUQq3y64dqlUXMAdtV4qx' },
   { name: 'KD Against',         cat: 'cuoi',     type: 'traphi',  img: 'images/kdagainst.jpg',       link: '1lE_kE3c8B5WVh3C93ZqzDXkTkbPY9KHQ' },
   { name: 'KD Agilera',         cat: 'cuoi',     type: 'traphi',  img: 'images/kdagilera.jpg',       link: '1gaF6rmeY_KrE6J05taeCFdAEDEZ9_Pus' },
-  { name: 'KD Moon Light',      cat: 'cuoi',     type: 'mienphi', img: 'images/kdmoonlight.jpg',     link: '1LlGpLJxDtJ7oj8jP6UL9MGYHmTqVBzb' },
+  { name: 'KD Moon Light',      cat: 'cuoi',     type: 'mienphi', img: 'images/kdmoonlight.jpg',     link: '1bcmTHuHTuxnNZJKddBe-iH6Ac-HftnyB' },
   { name: 'KD Type Ultimate',   cat: 'cuoi',     type: 'traphi',  img: 'images/kdtypeultimate.jpg',  link: '1WwUvBOAn2IMXl5feX1Wp0sLfcZ_MWuf-' },
   { name: 'KD Arturo',          cat: 'khac',     type: 'mienphi', img: 'images/kdarturo.jpg',        link: '1QSZcUMrlfWeBb-2PDdyASROMRXGHfP-2' },
   { name: 'KD Broisther',       cat: 'cuoi',     type: 'traphi',  img: 'images/kdbroisther.jpg',     link: '1bz0XpKMtIiYIliiQa8kZjNnamGSfCkpT' },
@@ -163,18 +163,22 @@ function cardHTML(f) {
         ? `<span class="price">Liên hệ</span>`
         : `<span class="price vip">VIP</span>`;
     
-    const btnHTML = isFree
-      ? `<button class="action-btn dl" onclick="window.open('${resolvedLink}','_blank')">${iconDl} Tải font</button>`
-      : isVip
-        ? `<button class="action-btn dl" onclick="window.open('${resolvedLink}','_blank')">${iconDl} Tải về</button>`
-        : isPreview
+        const btnHTML = isFree
+        ? `<button class="action-btn dl" onclick="downloadFont(this,'${resolvedLink}')">${iconDl} Tải font</button>`
+        : isVip
+          ? `<button class="action-btn dl" onclick="downloadFont(this,'${resolvedLink}')">${iconDl} Tải về</button>`
+          : isPreview
           ? `<button class="action-btn dl" onclick='openSlideModal(${JSON.stringify(f.slides)})'>${iconMore} Xem thêm</button>`
-          : `<button class="action-btn buy" onclick="window.open('${resolvedLink}','_blank')">${iconCart} Tải font</button>`;    
-  const updateBadge = isVip && f.updateDate
+          : `<button class="action-btn buy" onclick="downloadFont(this,'${resolvedLink}')">${iconCart} Tải font</button>`;
+    const updateBadge = isVip && f.updateDate
         ? `<span class="update-badge">
-         <i class="ri-time-line"></i>
          ${f.updateDate}
         </span>`
+        : '';
+    const styleBadge = f.style
+      ? `<span class="style-badge">
+       ${f.style}
+      </span>`
         : '';
 
   return `
@@ -186,7 +190,7 @@ function cardHTML(f) {
       </div>
       <div class="card-name-row">
         <div class="card-name">${f.name}</div>
-        ${updateBadge}
+        ${updateBadge}${styleBadge}
       </div>
       <div class="card-footer">${priceHTML}${btnHTML}</div>
     </div>`;
@@ -222,6 +226,32 @@ function appendCards() {
 function loadMore() {
   appendCards();
 }
+
+function downloadFont(btn, url) {
+  const original = btn.innerHTML;
+  btn.innerHTML = '<i class="ri-loader-4-line ri-spin"></i> Đang tải...';
+  btn.disabled = true;
+
+  const a = document.createElement('a');
+  a.href = url;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+
+  function onBlur() {
+    btn.innerHTML = original;
+    btn.disabled = false;
+    window.removeEventListener('blur', onBlur);
+  }
+  window.addEventListener('blur', onBlur);
+
+  setTimeout(() => {
+    window.removeEventListener('blur', onBlur);
+    btn.innerHTML = original;
+    btn.disabled = false;
+  }, 5000);
+}
+
 
 runFilter();
 
