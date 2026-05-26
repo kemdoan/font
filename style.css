@@ -510,6 +510,7 @@ body {
 }
 
 .kd-modal-close {
+  -webkit-tap-highlight-color: transparent;
   position: absolute;
   top: 10px;
   right: 10px;
@@ -601,6 +602,7 @@ body {
 }
 
 .kd-finder-btn {
+  -webkit-tap-highlight-color: transparent;
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -748,6 +750,7 @@ body {
 }
 
 .slide-close {
+  -webkit-tap-highlight-color: transparent;
   position: absolute;
   top: 12px;
   right: 12px;
@@ -786,6 +789,7 @@ body {
 }
 
 .slide-arrow {
+  -webkit-tap-highlight-color: transparent;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -832,6 +836,7 @@ body {
 }
 
 .btn-vip {
+  -webkit-tap-highlight-color: transparent;
   background: var(--pinkgradient);
   color: white;
   border: none;
