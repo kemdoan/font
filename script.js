@@ -253,8 +253,7 @@ function downloadFont(btn, url) {
 }
 runFilter();
 
-const params = new URLSearchParams(window.location.search);
-const targetFont = params.get('font');
+const targetFont = decodeURIComponent(window.location.hash.slice(1));
 if (targetFont) {
   const input = document.getElementById('searchInput');
   input.value = targetFont;
