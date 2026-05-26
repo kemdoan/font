@@ -102,6 +102,7 @@ body {
 }
 
 .btn-nm {
+  -webkit-tap-highlight-color: transparent;
   padding: 9px 20px;
   border-radius: 50px;
   font-size: 1rem;
@@ -125,10 +126,12 @@ body {
 
 
 .btn-zalo {
+  -webkit-tap-highlight-color: transparent;
   color: var(--text-muted);
 }
 
 .btn-fb {
+  -webkit-tap-highlight-color: transparent;   
   color: var(--text-muted);
 }
 
@@ -205,6 +208,7 @@ body {
 }
 
 .chip {
+  -webkit-tap-highlight-color: transparent;   
   padding: 9px 20px;
   border-radius: 50px;
   font-size: 1rem;
@@ -314,8 +318,14 @@ body {
   color: var(--free);
 }
 
-.action-btn.buy { color: var(--text-muted); }
-.action-btn.dl  { color: var(--text-muted); }
+.action-btn.buy {
+   -webkit-tap-highlight-color: transparent;  
+   color: var(--text-muted);
+}
+.action-btn.dl  {
+   -webkit-tap-highlight-color: transparent; 
+   color: var(--text-muted);
+}
 
 .action-btn.buy:hover {
   background: var(--bluegradient);
@@ -330,6 +340,7 @@ body {
 }
 
 .action-btn {
+  -webkit-tap-highlight-color: transparent;
   height: 32px;
   border-radius: 50px;
   border: none;
@@ -364,6 +375,7 @@ body {
 }
 
 .load-more-btn {
+  -webkit-tap-highlight-color: transparent;
   padding: 13px 40px;
   border-radius: 50px;
   border: none;
@@ -456,6 +468,7 @@ body {
 }
 /* ── KD FONT FINDER CHIP ── */
 .chip-finder {
+  -webkit-tap-highlight-color: transparent;
   background: var(--pinkgradient);
   color: #fff;
   box-shadow: var(--box-shadow-btn);
