@@ -105,6 +105,9 @@ function setChip(el, cat) {
   document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
   el.classList.add('active');
   currentCat = cat;
+   document.getElementById('searchInput').value = '';
+  document.getElementById('clearBtn').classList.remove('visible');
+  
   runFilter();
 }
 
