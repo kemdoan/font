@@ -259,7 +259,7 @@ runFilter();
 const backToTopBtn = document.querySelector('.backtotop-btn');
 
 window.addEventListener('scroll', () => {
-    backToTopBtn.style.display = window.scrollY > 200 ? 'flex' : 'none';
+    backToTopBtn.style.display = window.scrollY > 1000 ? 'flex' : 'none';
 });
 
 backToTopBtn.addEventListener('click', () => {
