@@ -264,6 +264,16 @@ if (targetFont) {
   document.getElementById('clearBtn').classList.add('visible');
   runFilter();
 }
+
+const params = new URLSearchParams(window.location.search);
+const targetFont = params.get('font');
+if (targetFont) {
+  const input = document.getElementById('searchInput');
+  input.value = targetFont;
+  document.getElementById('clearBtn').classList.add('visible');
+  runFilter();
+}
+
 // BACK TO TOP
 const backToTopBtn = document.querySelector('.backtotop-btn');
 
