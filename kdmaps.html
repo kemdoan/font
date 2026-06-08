@@ -362,7 +362,7 @@
 
   /* NOTIF BAR */
   #notif-bar {
-    margin-top:80px;
+    margin-top:50px;
     background: rgba(255,204,0,0.15);
     border-bottom: 1px solid rgba(255,204,0,0.3);
     padding: 10px 16px;
@@ -373,6 +373,7 @@
     color: var(--warning);
     font-weight: 600;
   }
+  
   #btn-allow-notif {
     margin-left: auto;
     background: var(--warning);
@@ -473,20 +474,16 @@
 </div>
 
 <script>
-// ── SERVICE WORKER (inline Blob) ─────────────────────────────
+// ── SERVICE WORKER ────────────────────────────────────────────
 let swReg = null;
-
-const swCode = `
-self.addEventListener('notificationclick', e => e.notification.close());
-`;
 
 async function initServiceWorker() {
   if (!('serviceWorker' in navigator)) return;
   try {
-    const blob = new Blob([swCode], { type: 'application/javascript' });
-    const swUrl = URL.createObjectURL(blob);
-    swReg = await navigator.serviceWorker.register(swUrl, { scope: '/' });
-    console.log('SW registered', swReg);
+    swReg = await navigator.serviceWorker.register('/sw.js', { scope: '/' });
+    // Chờ SW active hoàn toàn
+    await navigator.serviceWorker.ready;
+    console.log('SW ready & active');
   } catch(e) {
     console.warn('SW register failed:', e);
   }
@@ -504,18 +501,28 @@ async function showSystemNotification(title, body) {
     silent: false,
     requireInteraction: false
   };
-  // SW.showNotification() = system notification bar = đồng hồ nhận được
-  if (swReg && swReg.active) {
-    try {
-      await swReg.showNotification(title, opts);
+
+  // Ưu tiên SW.showNotification() → thanh bar + đồng hồ nhận được
+  try {
+    // Nếu SW chưa active, thử chờ (tối đa 3 giây)
+    if (swReg && !swReg.active) {
+      await Promise.race([
+        navigator.serviceWorker.ready,
+        new Promise(r => setTimeout(r, 3000))
+      ]);
+    }
+    const reg = swReg || await navigator.serviceWorker.ready;
+    if (reg && reg.active) {
+      await reg.showNotification(title, opts);
       return;
-    } catch(e) { console.warn('SW notif fail:', e); }
-  }
-  // Fallback nếu SW chưa active
+    }
+  } catch(e) { console.warn('SW notif fail:', e); }
+
+  // Fallback: new Notification() cho desktop
   try {
     const n = new Notification(title, opts);
     setTimeout(() => n.close(), 8000);
-  } catch(e) {}
+  } catch(e) { console.warn('Fallback notif fail:', e); }
 }
 
 // ── STATE ────────────────────────────────────────────────────
@@ -577,11 +584,13 @@ function requestNotifPermission() {
 
 async function testWatchNotif() {
   if (!notifGranted) { showToast('⚠️', 'Chưa bật thông báo', ''); return; }
-  // Chờ SW active nếu chưa sẵn sàng
-  if (swReg && !swReg.active) {
-    showToast('⏳', 'Đang khởi động SW...', 'Thử lại sau 2 giây');
-    await new Promise(r => setTimeout(r, 2000));
-  }
+  // Chờ SW ready
+  try {
+    await Promise.race([
+      navigator.serviceWorker.ready,
+      new Promise(r => setTimeout(r, 3000))
+    ]);
+  } catch(e) {}
   await showSystemNotification('⬆ KD Maps', 'Đi thẳng 200m rồi rẽ trái vào Lê Lợi');
   setTimeout(() => showSystemNotification('↰ Rẽ trái', 'Vào đường Nguyễn Huệ · còn 80m'), 3000);
   showToast('⌚', 'Đã gửi test!', 'Kéo thanh thông báo xuống xem');
@@ -915,4 +924,4 @@ function getTurnIcon(type, modifier) {
 }
 </script>
 </body>
-</html>
+</html> 
