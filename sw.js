@@ -11,12 +11,10 @@ self.addEventListener('notificationclick', e => {
   e.notification.close();
   e.waitUntil(clients.matchAll({ type: 'window' }).then(list => {
     if (list.length) return list[0].focus();
-    return clients.openWindow('/');
+    return clients.openWindow('/font/');
   }));
 });
 
 self.addEventListener('notificationclose', () => {});
 
-self.addEventListener('fetch', e => {
-  // passthrough — chỉ cần để SW active
-});
+self.addEventListener('fetch', e => {});
