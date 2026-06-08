@@ -4,8 +4,8 @@
   "description": "Ứng dụng dẫn đường KD Maps",
   "start_url": "./kdmaps.html",
   "display": "standalone",
-  "background_color": "#0a0a0f",
-  "theme_color": "#00e5ff",
+  "background_color": "#fff",
+  "theme_color": "#000",
   "orientation": "portrait",
   "icons": [
     {
