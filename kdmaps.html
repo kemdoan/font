@@ -9,17 +9,17 @@
 <link rel="manifest" href="manifest1.json">
 <meta name="theme-color" content="#00e5ff">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Barlow:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&family=Barlow:wght@300;400;600;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <style>
   :root {
-    --bg: #0a0a0f;
-    --surface: #12121a;
-    --surface2: #1a1a26;
-    --accent: #00e5ff;
+    --bg: #fff;
+    --surface: #fff;
+    --surface2: #666fff;
+    --accent: #666fff;
     --accent2: #ff6b35;
-    --text: #e8e8f0;
+    --text: #666fff;
     --muted: #6b6b80;
     --success: #00ff88;
     --warning: #ffcc00;
@@ -30,7 +30,7 @@
   * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 
   body {
-    font-family: 'Barlow', sans-serif;
+    font-family: 'Manrope', sans-serif;
     background: var(--bg);
     color: var(--text);
     height: 100dvh;
@@ -52,12 +52,12 @@
   .leaflet-control-zoom { display: none !important; }
 
   /* TOP BAR */
- #topbar {
+  #topbar {
     position: absolute;
     top: 0; left: 0; right: 0;
     z-index: 1000;
     padding: 12px 16px;
-    background: linear-gradient(to bottom, rgba(10,10,15,0.97) 0%, transparent 100%);
+    background: linear-gradient(to bottom, rgba(10,10,15,0.5) 0%, transparent 100%);
   }
 
   #search-box {
@@ -68,28 +68,34 @@
 
   #destination-input {
     flex: 1;
-    background: var(--surface);
-    border: 1.5px solid rgba(0,229,255,0.3);
-    border-radius: 12px;
+    background: #fff;
+    border: none;
+    border-radius: 50px;
     padding: 12px 16px;
     color: var(--text);
-    font-family: 'Barlow', sans-serif;
+    font-family: 'Manrope', sans-serif;
     font-size: 15px;
     font-weight: 600;
     outline: none;
     transition: border-color 0.2s;
   }
 
-  #destination-input::placeholder { color: var(--muted); font-weight: 400; }
-  #destination-input:focus { border-color: var(--accent); }
+  #destination-input::placeholder {
+    color: var(--muted);
+    font-weight: 400;
+  }
+  
+  #destination-input:focus {
+    border-color: var(--accent);
+  }
 
   #btn-go {
-    background: var(--accent);
-    color: #000;
+    background: #fff;
+    color: #666fff;
     border: none;
-    border-radius: 12px;
+    border-radius: 50px;
     padding: 12px 20px;
-    font-family: 'Barlow', sans-serif;
+    font-family: 'Manrope', sans-serif;
     font-size: 15px;
     font-weight: 900;
     cursor: pointer;
@@ -103,12 +109,12 @@
     position: absolute;
     top: 60px; left: 16px; right: 16px;
     background: var(--surface);
-    border: 1.5px solid rgba(0,229,255,0.25);
+    border: none;
     border-radius: 12px;
     z-index: 1001;
     overflow: hidden;
     display: none;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.6);
     max-height: 220px;
     overflow-y: auto;
   }
@@ -135,7 +141,7 @@
     top: 76px; left: 16px; right: 16px;
     z-index: 1000;
     background: var(--surface);
-    border: 1.5px solid rgba(0,229,255,0.2);
+    border: none;
     border-radius: var(--radius);
     padding: 14px 16px;
     display: none;
@@ -158,9 +164,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 22px;
+    font-size: 30px;
     flex-shrink: 0;
-    color: #000;
+    color: #fff;
   }
 
   #turn-text {
@@ -172,7 +178,7 @@
   }
 
   #turn-dist {
-    font-family: 'Space Mono', monospace;
+    font-family: 'Manrope', sans-serif;
     font-size: 13px;
     color: var(--accent);
     font-weight: 700;
@@ -184,7 +190,7 @@
     bottom: 0; left: 0; right: 0;
     z-index: 1000;
     padding: 16px;
-    background: linear-gradient(to top, rgba(10,10,15,0.98) 60%, transparent 100%);
+    background: linear-gradient(to top, rgba(10,10,15,0.5) 0%, transparent 100%);
   }
 
   #status-card {
@@ -204,7 +210,7 @@
 
   .stat-block { text-align: center; }
   .stat-val {
-    font-family: 'Space Mono', monospace;
+    font-family: 'Manrope', sans-serif;
     font-size: 20px;
     font-weight: 700;
     color: var(--accent);
@@ -234,18 +240,21 @@
   }
 
   #btn-stop {
-    width: 100%;
+    display: block;
+    margin: 0 auto;
+    width: 60%;
     background: rgba(255,51,85,0.15);
     color: var(--danger);
     border: 1.5px solid rgba(255,51,85,0.4);
-    border-radius: 10px;
+    border-radius: 50px;
     padding: 11px;
-    font-family: 'Barlow', sans-serif;
+    font-family: 'Manrope', sans-serif;
     font-size: 14px;
     font-weight: 700;
     cursor: pointer;
     letter-spacing: 0.5px;
   }
+  
   #btn-stop:active { opacity: 0.7; }
 
   #start-row {
@@ -255,13 +264,14 @@
   }
 
   #btn-navigate {
-    flex: 1;
+    width: 60%;
+    margin: 0 auto;
     background: var(--accent2);
     color: #fff;
     border: none;
-    border-radius: 12px;
+    border-radius: 50px;
     padding: 14px;
-    font-family: 'Barlow', sans-serif;
+    font-family: 'Manrope', sans-serif;
     font-size: 16px;
     font-weight: 900;
     cursor: pointer;
@@ -270,6 +280,7 @@
     justify-content: center;
     transition: all 0.15s;
   }
+  
   #btn-navigate:active { transform: scale(0.97); }
 
   #btn-locate {
@@ -277,15 +288,16 @@
     bottom: 24px;
     left: 16px;
     z-index: 1001;
-    background: var(--surface);
-    border: 1.5px solid rgba(255,255,255,0.15);
-    border-radius: 14px;
-    padding: 14px 16px;
+    background: #fff;
+    border: none;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
     color: var(--text);
-    font-size: 22px;
+    font-size: 20px;
     cursor: pointer;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.5);
   }
+  
   #btn-locate:active { opacity: 0.7; }
 
   #btn-test-watch {
@@ -293,18 +305,19 @@
     bottom: 24px;
     right: 16px;
     z-index: 1002;
-    background: var(--surface);
-    border: 1.5px solid rgba(0,229,255,0.3);
-    border-radius: 14px;
-    padding: 12px 14px;
+    background: #fff;
+    border: none;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
     color: var(--accent);
     font-size: 20px;
     cursor: pointer;
     display: none;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.5);
   }
+  
   #btn-test-watch:active { opacity: 0.7; }
 
   /* TOAST */
@@ -339,7 +352,7 @@
     top: 76px;
     left: 16px;
     z-index: 5;
-    font-family: 'Space Mono', monospace;
+    font-family: 'Manrope', sans-serif;
     font-size: 11px;
     color: var(--muted);
     letter-spacing: 2px;
@@ -385,13 +398,13 @@
   }
   .spinner {
     width: 36px; height: 36px;
-    border: 3px solid rgba(0,229,255,0.2);
+    border: 2px solid rgba(0,229,255,0.2);
     border-top-color: var(--accent);
     border-radius: 50%;
     animation: spin 0.8s linear infinite;
   }
   @keyframes spin { to { transform: rotate(360deg); } }
-  #loading-text { font-size: 13px; color: var(--muted); font-family: 'Space Mono', monospace; }
+  #loading-text { font-size: 13px; color: var(--muted); font-family: 'Manrope', sans-serif; }
 </style>
 </head>
 <body>
@@ -406,7 +419,7 @@
 
 <div id="topbar">
   <div id="search-box">
-    <input id="destination-input" type="text" placeholder="🔍 Nhập điểm đến..." autocomplete="off">
+    <input id="destination-input" type="text" placeholder="📌 Chọn điểm đến..." autocomplete="off">
     <button id="btn-go" onclick="searchRoute()">Đi</button>
   </div>
   <div id="autocomplete-list"></div>
