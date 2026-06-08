@@ -480,8 +480,8 @@ let swReg = null;
 async function initServiceWorker() {
   if (!('serviceWorker' in navigator)) return;
   try {
-    swReg = await navigator.serviceWorker.register('/sw.js', { scope: '/' });
-    // Chờ SW active hoàn toàn
+    // GitHub Pages: kemdoan.github.io/font/ → SW phải cùng scope /font/
+    swReg = await navigator.serviceWorker.register('/font/sw.js', { scope: '/font/' });
     await navigator.serviceWorker.ready;
     console.log('SW ready & active');
   } catch(e) {
@@ -501,15 +501,9 @@ async function showSystemNotification(title, body) {
     silent: false,
     requireInteraction: false
   };
-
-  // Ưu tiên SW.showNotification() → thanh bar + đồng hồ nhận được
   try {
-    // Nếu SW chưa active, thử chờ (tối đa 3 giây)
     if (swReg && !swReg.active) {
-      await Promise.race([
-        navigator.serviceWorker.ready,
-        new Promise(r => setTimeout(r, 3000))
-      ]);
+      await Promise.race([navigator.serviceWorker.ready, new Promise(r => setTimeout(r, 3000))]);
     }
     const reg = swReg || await navigator.serviceWorker.ready;
     if (reg && reg.active) {
@@ -517,8 +511,6 @@ async function showSystemNotification(title, body) {
       return;
     }
   } catch(e) { console.warn('SW notif fail:', e); }
-
-  // Fallback: new Notification() cho desktop
   try {
     const n = new Notification(title, opts);
     setTimeout(() => n.close(), 8000);
@@ -584,12 +576,8 @@ function requestNotifPermission() {
 
 async function testWatchNotif() {
   if (!notifGranted) { showToast('⚠️', 'Chưa bật thông báo', ''); return; }
-  // Chờ SW ready
   try {
-    await Promise.race([
-      navigator.serviceWorker.ready,
-      new Promise(r => setTimeout(r, 3000))
-    ]);
+    await Promise.race([navigator.serviceWorker.ready, new Promise(r => setTimeout(r, 3000))]);
   } catch(e) {}
   await showSystemNotification('⬆ KD Maps', 'Đi thẳng 200m rồi rẽ trái vào Lê Lợi');
   setTimeout(() => showSystemNotification('↰ Rẽ trái', 'Vào đường Nguyễn Huệ · còn 80m'), 3000);
