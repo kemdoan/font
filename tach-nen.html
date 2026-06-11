@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tách Nền Ảnh</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;600;700&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0f0f14;
+    --surface: #18181f;
+    --border: #2a2a38;
+    --accent: #7c6dfa;
+    --accent2: #fa6d9a;
+    --text: #e8e8f0;
+    --muted: #6b6b85;
+    --success: #4ade80;
+  }
+
+  body {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px 60px;
+  }
+
+  header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  .logo-dot {
+    display: inline-block;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+
+  h1 {
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    background: linear-gradient(135deg, #fff 40%, var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .subtitle {
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin-top: 8px;
+    font-weight: 300;
+  }
+
+  .badge {
+    display: inline-block;
+    background: rgba(124,109,250,0.15);
+    border: 1px solid rgba(124,109,250,0.3);
+    color: var(--accent);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+  }
+
+  .workspace {
+    width: 100%;
+    max-width: 900px;
+  }
+
+  /* Drop zone */
+  .dropzone {
+    border: 2px dashed var(--border);
+    border-radius: 20px;
+    background: var(--surface);
+    padding: 56px 24px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    position: relative;
+  }
+  .dropzone:hover, .dropzone.drag-over {
+    border-color: var(--accent);
+    background: rgba(124,109,250,0.05);
+  }
+  .dropzone input[type=file] {
+    position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; height: 100%;
+  }
+
+  .drop-icon {
+    font-size: 3rem;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .drop-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .drop-hint {
+    color: var(--muted);
+    font-size: 0.85rem;
+  }
+
+  .btn-choose {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 28px;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    pointer-events: none; /* let the file input handle clicks */
+  }
+  .dropzone:hover .btn-choose { opacity: 0.85; }
+
+  /* Results */
+  #results {
+    display: none;
+    margin-top: 32px;
+  }
+
+  .panels {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  @media(max-width: 600px) { .panels { grid-template-columns: 1fr; } }
+
+  .panel {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .panel-label {
+    padding: 12px 16px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .panel-img {
+    padding: 12px;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: repeating-conic-gradient(#232330 0% 25%, #1a1a26 0% 50%) 0 0 / 20px 20px;
+  }
+
+  .panel-img img {
+    max-width: 100%;
+    max-height: 320px;
+    object-fit: contain;
+    border-radius: 8px;
+    display: block;
+  }
+
+  /* Progress */
+  #progress-wrap {
+    display: none;
+    margin-top: 24px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px;
+    text-align: center;
+  }
+
+  .spinner {
+    width: 36px; height: 36px;
+    border: 3px solid var(--border);
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin: 0 auto 16px;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .progress-bar-track {
+    background: var(--border);
+    border-radius: 10px;
+    height: 6px;
+    margin-top: 16px;
+    overflow: hidden;
+  }
+  .progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    border-radius: 10px;
+    width: 0%;
+    transition: width 0.3s ease;
+  }
+
+  .progress-text {
+    color: var(--muted);
+    font-size: 0.85rem;
+    margin-top: 10px;
+  }
+
+  /* Actions */
+  .actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    padding: 12px 28px;
+    border-radius: 50px;
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    color: #fff;
+  }
+  .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
+
+  .btn-ghost {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text);
+  }
+  .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+  .status-ok {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--success);
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-top: 8px;
+  }
+
+  /* Error */
+  #error-msg {
+    display: none;
+    margin-top: 16px;
+    background: rgba(250,100,100,0.1);
+    border: 1px solid rgba(250,100,100,0.3);
+    color: #fa8080;
+    padding: 14px 18px;
+    border-radius: 12px;
+    font-size: 0.88rem;
+  }
+
+  .note {
+    margin-top: 32px;
+    color: var(--muted);
+    font-size: 0.78rem;
+    text-align: center;
+    line-height: 1.7;
+  }
+  .note strong { color: var(--success); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="badge">✦ Miễn phí · Chạy local · Không gửi ảnh lên server</div>
+  <h1><span class="logo-dot"></span>Tách Nền Ảnh AI</h1>
+  <p class="subtitle">Xóa phông tự động ngay trên trình duyệt — không cần Photoshop, không cần tài khoản</p>
+</header>
+
+<div class="workspace">
+
+  <div class="dropzone" id="dropzone">
+    <input type="file" id="fileInput" accept="image/*">
+    <span class="drop-icon">🖼️</span>
+    <div class="drop-title">Kéo thả ảnh vào đây</div>
+    <div class="drop-hint">hoặc nhấp để chọn ảnh từ máy</div>
+    <button class="btn-choose" tabindex="-1">Chọn ảnh</button>
+  </div>
+
+  <div id="progress-wrap">
+    <div class="spinner"></div>
+    <div style="font-weight:600">Đang tách nền...</div>
+    <div class="progress-bar-track"><div class="progress-bar-fill" id="progressBar"></div></div>
+    <div class="progress-text" id="progressText">Đang tải mô hình AI lần đầu (~40MB, chỉ tải 1 lần)...</div>
+  </div>
+
+  <div id="error-msg"></div>
+
+  <div id="results">
+    <div class="panels">
+      <div class="panel">
+        <div class="panel-label">📷 Ảnh gốc</div>
+        <div class="panel-img"><img id="imgOriginal" src="" alt="Ảnh gốc"></div>
+      </div>
+      <div class="panel">
+        <div class="panel-label">✨ Đã tách nền</div>
+        <div class="panel-img"><img id="imgResult" src="" alt="Kết quả"></div>
+      </div>
+    </div>
+
+    <div class="actions">
+      <a id="btnDownload" class="btn btn-primary" download="tach-nen.png">⬇ Tải ảnh PNG</a>
+      <button class="btn btn-ghost" id="btnReset">🔄 Làm ảnh khác</button>
+    </div>
+    <div class="status-ok">✓ Tách nền thành công — nền trong suốt (PNG)</div>
+  </div>
+
+  <p class="note">
+    <strong>🔒 Ảnh của bạn không bị gửi đi đâu cả.</strong><br>
+    Toàn bộ quá trình xử lý chạy ngay trên máy bạn bằng AI WebAssembly.<br>
+    Lần đầu chạy cần tải model ~40MB — từ lần sau sẽ rất nhanh.
+  </p>
+
+</div>
+
+<script type="module">
+  import { removeBackground } from 'https://cdn.jsdelivr.net/npm/@imgly/background-removal@1.4.5/dist/browser/index.js';
+
+  const dropzone = document.getElementById('dropzone');
+  const fileInput = document.getElementById('fileInput');
+  const progressWrap = document.getElementById('progress-wrap');
+  const progressBar = document.getElementById('progressBar');
+  const progressText = document.getElementById('progressText');
+  const results = document.getElementById('results');
+  const imgOriginal = document.getElementById('imgOriginal');
+  const imgResult = document.getElementById('imgResult');
+  const btnDownload = document.getElementById('btnDownload');
+  const btnReset = document.getElementById('btnReset');
+  const errorMsg = document.getElementById('error-msg');
+
+  // Drag & drop
+  dropzone.addEventListener('dragover', e => { e.preventDefault(); dropzone.classList.add('drag-over'); });
+  dropzone.addEventListener('dragleave', () => dropzone.classList.remove('drag-over'));
+  dropzone.addEventListener('drop', e => {
+    e.preventDefault();
+    dropzone.classList.remove('drag-over');
+    const file = e.dataTransfer.files[0];
+    if (file && file.type.startsWith('image/')) processFile(file);
+  });
+
+  fileInput.addEventListener('change', () => {
+    if (fileInput.files[0]) processFile(fileInput.files[0]);
+  });
+
+  btnReset.addEventListener('click', () => {
+    results.style.display = 'none';
+    dropzone.style.display = 'block';
+    errorMsg.style.display = 'none';
+    fileInput.value = '';
+  });
+
+  async function processFile(file) {
+    errorMsg.style.display = 'none';
+    dropzone.style.display = 'none';
+    results.style.display = 'none';
+    progressWrap.style.display = 'block';
+    progressBar.style.width = '0%';
+
+    // Show original preview
+    const originalURL = URL.createObjectURL(file);
+    imgOriginal.src = originalURL;
+
+    const steps = [
+      { pct: 10, msg: 'Đang tải mô hình AI lần đầu (~40MB, chỉ tải 1 lần)...' },
+      { pct: 35, msg: 'Phân tích ảnh...' },
+      { pct: 65, msg: 'Đang tách nền...' },
+      { pct: 90, msg: 'Hoàn thiện...' },
+    ];
+    let stepIdx = 0;
+    const fakeProgress = setInterval(() => {
+      if (stepIdx < steps.length) {
+        progressBar.style.width = steps[stepIdx].pct + '%';
+        progressText.textContent = steps[stepIdx].msg;
+        stepIdx++;
+      }
+    }, 1200);
+
+    try {
+      const resultBlob = await removeBackground(file, {
+        publicPath: 'https://cdn.jsdelivr.net/npm/@imgly/background-removal@1.4.5/dist/browser/',
+        progress: (key, current, total) => {
+          if (total > 0) {
+            const pct = Math.round((current / total) * 100);
+            progressBar.style.width = Math.min(pct, 95) + '%';
+          }
+        }
+      });
+
+      clearInterval(fakeProgress);
+      progressBar.style.width = '100%';
+      progressText.textContent = 'Hoàn tất!';
+
+      setTimeout(() => {
+        progressWrap.style.display = 'none';
+        const resultURL = URL.createObjectURL(resultBlob);
+        imgResult.src = resultURL;
+        btnDownload.href = resultURL;
+        results.style.display = 'block';
+      }, 400);
+
+    } catch (err) {
+      clearInterval(fakeProgress);
+      progressWrap.style.display = 'none';
+      dropzone.style.display = 'block';
+      errorMsg.textContent = '❌ Lỗi: ' + (err.message || 'Không thể tách nền. Thử lại với ảnh khác.');
+      errorMsg.style.display = 'block';
+      console.error(err);
+    }
+  }
+</script>
+</body>
+</html>
