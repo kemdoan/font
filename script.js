@@ -12,7 +12,7 @@ const allFonts = [
   { name: 'KD Hongkong',        cat: 'khac',     type: 'traphi', img: 'images/kdhongkong.jpg',       link: '1qG0N-tU6mKRC5CZxXQqMO9Q94WcfMtUl', style: '3 style' },
   { name: 'KD Valery',          cat: 'cuoi',     type: 'traphi',  img: 'images/kdvalery.jpg',        link: '1CiQpd4ugE0FuV1Nmo8APvQ27LxR2Eufa' },
   { name: 'KD Doan Nguyen',     cat: 'khac',     type: 'traphi',  img: 'images/kddoannguyen.jpg',    link: '1d3eh5Ge2q_-kgiyv8OHngvXVDOerk0tO', style: '2 style' },
-  { name: 'KD Kaelyna Script', cat: 'cuoi', type: 'mienphi', img: 'images/kdkaelynascript.jpg',      link: '1OG0Aq95FJM4gxVVzO37Tw7-aPOugEpbl', vipLink: '1qbrtxHkvMby1ZX5tGA3uKLn-7yO0GvjG' },
+  { name: 'KD Kaelyna Script',  cat: 'cuoi',     type: 'mienphi', img: 'images/kdkaelynascript.jpg',      link: '1OG0Aq95FJM4gxVVzO37Tw7-aPOugEpbl', vipLink: '1qbrtxHkvMby1ZX5tGA3uKLn-7yO0GvjG' },
   { name: 'KD Huees',           cat: 'khac',     type: 'traphi',  img: 'images/kdhuees.jpg',         link: '1qsXoKu7nm_DGpcyAla6gsZFw88hmuLai' },
   { name: 'KD Kem Doan',        cat: 'khac',     type: 'traphi',  img: 'images/kdkemdoan.jpg',       link: '17j_BgCy0kTpTpNDBRv2Qqpu1guhkY-KD' },
   { name: 'KD Lemaire',         cat: 'cuoi',     type: 'traphi',  img: 'images/kdlemaire.jpg',       link: '1j0tWnOrhLm5S5oTQiUyiM6TPKXiSvtlQ' },
@@ -25,7 +25,7 @@ const allFonts = [
   { name: 'KD Type Ultimate',   cat: 'cuoi',     type: 'traphi',  img: 'images/kdtypeultimate.jpg',  link: '1WwUvBOAn2IMXl5feX1Wp0sLfcZ_MWuf-' },
   { name: 'KD Arturo',          cat: 'khac',     type: 'mienphi', img: 'images/kdarturo.jpg',        link: '1QSZcUMrlfWeBb-2PDdyASROMRXGHfP-2', vipLink: '1qCcQttNdU6s2Ol4FJ2Rva5BCkFD6-Fe5' },
   { name: 'KD Broisther',       cat: 'cuoi',     type: 'traphi',  img: 'images/kdbroisther.jpg',     link: '1bz0XpKMtIiYIliiQa8kZjNnamGSfCkpT' },
-  { name: 'KD Aureligena Script',cat: 'cuoi',     type: 'mienphi', img: 'images/kdaureligenascript.jpg', link: '1zKickXBrhIsYtrkYKLH8ecB8aPqERWBP', vipLink: '1kOXDPehHdNbTLvDcjBMUnSoejag5DZik' },
+  { name: 'KD Aureligena Script',cat: 'cuoi',    type: 'mienphi', img: 'images/kdaureligenascript.jpg', link: '1zKickXBrhIsYtrkYKLH8ecB8aPqERWBP', vipLink: '1kOXDPehHdNbTLvDcjBMUnSoejag5DZik' },
   { name: 'KD Bailey',          cat: 'khac',     type: 'traphi',  img: 'images/kdbailey.jpg',        link: '1OV1u7XcwelsEN2ZkQNXYTzTYcXu-tp-8' },
   { name: 'KD Bakar',           cat: 'khac',     type: 'traphi',  img: 'images/kdbakar.jpg',         link: '13FsHqZhli67bCoi8MnYJSxhpx0HYbExq' },
   { name: 'KD Adidas Pro',      cat: 'khac',     type: 'mienphi', img: 'images/kdadidaspro.jpg',     link: '1Y8LTc1LL_xRb4_bOjPv9-her0aJE6zYN', vipLink: '1VvUOncNXp56ZY4MxKyZu82uDks7WDBYF' },
@@ -93,7 +93,8 @@ const FREE_WAIT = 60;
 
 function startFreeCountdown(btn, url) {
   if (freeCountdownActive) {
-    alert('Vui lòng chờ hết 60s để tải font khác. \nĐăng ký VIP để tải không giới hạn.');
+    document.getElementById('waitModal').classList.add('active');
+    document.body.style.overflow = 'hidden';
     return;
   }
 
@@ -396,3 +397,9 @@ function closeVipModal(e) {
   document.getElementById('vipModal').classList.remove('active');
   document.body.style.overflow = '';
 }
+
+function closeWaitModal(e) {
+  if (e && e.target !== document.getElementById('waitModal')) return;
+  document.getElementById('waitModal').classList.remove('active');
+  document.body.style.overflow = '';
+}  
