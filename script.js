@@ -55,7 +55,7 @@ const allFonts = [
   { name: 'KD Vince Display',   cat: 'khac',     type: 'mienphi', img: 'images/kdvincedisplay.jpg',  link: '1b6KN36utlHcZqc2-Mi8NRHdWz4SfvIgs' },
   { name: 'KD Yon Love',        cat: 'khac',     type: 'mienphi', img: 'images/kdyonlove.jpg',       link: '1CkgxirVfbSgkaMRLaXk9gWmrHsKqNMzS' },
   { name: 'KD Zoika',           cat: 'khac',     type: 'mienphi', img: 'images/kdzoika.jpg',         link: '1tVxUfTcBy3l1jJoNRcdVQkaQkhYMGgSs' },
-  { name: 'Tổng hợp',  cat: 'kdvip', type: 'kdvip', img: 'images/full.jpg', link: '1u1XxgSP8HLlpweeeTEe46gLOT-FY-dEQ', updateDate: 'Cập nhật 16/05/26' },
+  
   { name: 'Bộ KD',     cat: 'kdvip', type: 'kdvip', img: 'images/kd.jpg',   link: '1vgcFX7IAhI6HOyq5C3oI0mY7f8LZHkwE', updateDate: 'Cập nhật 16/05/26' },
   { name: 'Bộ 1FTV',   cat: 'kdvip', type: 'kdvip', img: 'images/1ftv.jpg', link: '1aIiSUrC8-ry-xF5WxSjJAwaM76A5Ay0R', updateDate: 'Cập nhật 16/05/26' },
   { name: 'Bộ BHN',    cat: 'kdvip', type: 'kdvip', img: 'images/bhn.jpg',  link: '1JDIGGYLPHDhefeRgjwA1EFLqIhonRxaF', updateDate: 'Cập nhật 15/06/26' },
