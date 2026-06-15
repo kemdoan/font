@@ -1,227 +1,45 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html>
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Before & After — Iframe Generator</title>
 <style>
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body {
-    background:#0f0f0f; min-height:100vh;
-    display:flex; flex-direction:column; align-items:center; justify-content:center;
-    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    padding:24px;
-  }
-  .card {
-    width:100%; max-width:580px;
-    background:#181818; border:1px solid #2a2a2a;
-    border-radius:14px; padding:28px;
-  }
-  h1 { font-size:17px; font-weight:500; color:#fff; margin-bottom:4px; }
-  .sub { font-size:13px; color:#666; margin-bottom:24px; }
-
-  .field { margin-bottom:14px; }
-  .field label { display:block; font-size:11px; color:#888; font-weight:500; letter-spacing:.06em; margin-bottom:6px; }
-  .field input {
-    width:100%; background:#111; border:1px solid #2a2a2a;
-    border-radius:8px; padding:10px 14px; font-size:13px; color:#fff; outline:none;
-    transition:border-color .15s;
-  }
-  .field input:focus { border-color:#444; }
-  .field input::placeholder { color:#3a3a3a; }
-
-  .row { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
-
-  #gen-btn {
-    width:100%; margin-top:4px; padding:12px;
-    background:#fff; color:#000; border:none; border-radius:8px;
-    font-size:14px; font-weight:500; cursor:pointer; transition:opacity .15s;
-  }
-  #gen-btn:hover { opacity:.88; }
-
-  /* PREVIEW */
-  #preview-wrap { display:none; margin-top:24px; }
-  .section-label { font-size:11px; color:#666; font-weight:500; letter-spacing:.06em; margin-bottom:10px; }
-
-  #slider-container {
-    position:relative; width:100%; border-radius:10px; overflow:hidden;
-    cursor:ew-resize; user-select:none; touch-action:none;
-    border:1px solid #2a2a2a;
-  }
-  #slider-container img { -webkit-user-drag:none; pointer-events:none; }
-  #img-after  { display:block; width:100%; height:auto; }
-  #img-before { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; clip-path:inset(0 50% 0 0); }
-
-  #divider {
-    position:absolute; top:0; bottom:0; left:50%;
-    width:2px; background:rgba(255,255,255,.8); transform:translateX(-50%); pointer-events:none;
-  }
-  #handle {
-    position:absolute; top:50%; left:50%;
-    transform:translate(-50%,-50%);
-    width:42px; height:42px; border-radius:50%;
-    background:#fff; display:flex; align-items:center; justify-content:center;
-    box-shadow:0 2px 10px rgba(0,0,0,.5);
-  }
-  .lbl {
-    position:absolute; bottom:12px;
-    background:rgba(0,0,0,.55); color:#fff;
-    font-size:12px; font-weight:500; padding:4px 10px; border-radius:4px; pointer-events:none;
-  }
-
-  /* CODE OUTPUT */
-  #code-wrap { margin-top:20px; }
-  .code-box {
-    position:relative; background:#111; border:1px solid #2a2a2a;
-    border-radius:8px; padding:14px 44px 14px 14px;
-    font-family:monospace; font-size:12px; color:#aaa;
-    word-break:break-all; line-height:1.6;
-  }
-  #copy-btn {
-    position:absolute; top:10px; right:10px;
-    background:#222; border:1px solid #333; color:#aaa;
-    border-radius:6px; padding:4px 10px; font-size:11px; cursor:pointer;
-    transition:background .15s;
-  }
-  #copy-btn:hover { background:#2e2e2e; color:#fff; }
-  .copy-ok { color:#4caf50 !important; }
-
-  .steps {
-    margin-top:16px; background:#111; border:1px solid #2a2a2a;
-    border-radius:8px; padding:14px 16px;
-  }
-  .steps p { font-size:12px; color:#666; line-height:1.8; }
-  .steps strong { color:#aaa; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:#000; display:flex; align-items:center; justify-content:center; height:100vh; }
+#w { position:relative; width:100%; cursor:ew-resize; user-select:none; touch-action:none; }
+#w img { -webkit-user-drag:none; pointer-events:none; display:block; width:100%; }
+#ib { position:absolute; inset:0; height:100%; object-fit:cover; clip-path:inset(0 50% 0 0); }
+#dv { position:absolute; top:0; bottom:0; left:50%; width:2px; background:rgba(255,255,255,.85); transform:translateX(-50%); pointer-events:none; }
+#hd { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:42px; height:42px; border-radius:50%; background:#fff; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 10px rgba(0,0,0,.4); }
+.lb { position:absolute; bottom:12px; background:rgba(0,0,0,.55); color:#fff; font-size:13px; font-weight:500; padding:4px 10px; border-radius:4px; pointer-events:none; font-family:sans-serif; }
 </style>
 </head>
 <body>
-
-<div class="card">
-  <h1>Before &amp; After — Iframe Generator</h1>
-  <p class="sub">Tạo slider + lấy code iframe dán vào Behance</p>
-
-  <div class="field">
-    <label>LINK ẢNH BEFORE</label>
-    <input type="text" id="url-before" placeholder="https://i.imgur.com/abc.jpg">
-  </div>
-  <div class="field">
-    <label>LINK ẢNH AFTER</label>
-    <input type="text" id="url-after" placeholder="https://i.imgur.com/xyz.jpg">
-  </div>
-  <div class="row">
-    <div class="field">
-      <label>LABEL BEFORE</label>
-      <input type="text" id="lbl-b" value="Before">
-    </div>
-    <div class="field">
-      <label>LABEL AFTER</label>
-      <input type="text" id="lbl-a" value="After">
+<div id="w">
+  <img id="ia" src="https://kemdoan.github.io/font/images/kdgoken.jpg"  draggable="false">
+  <img id="ib" src="https://kemdoan.github.io/font/images/kdnetsera.jpg" draggable="false">
+  <div id="dv">
+    <div id="hd">
+      <svg width="20" height="20" viewBox="0 0 22 22" fill="none">
+        <path d="M7 11H3M7 11L4.5 8.5M7 11L4.5 13.5"       stroke="#333" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M15 11H19M15 11L17.5 8.5M15 11L17.5 13.5" stroke="#333" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
     </div>
   </div>
-  <div class="field">
-    <label>CHIỀU CAO IFRAME (px)</label>
-    <input type="text" id="iframe-h" value="500">
-  </div>
-
-  <button id="gen-btn" onclick="generate()">Tạo slider →</button>
-
-  <!-- PREVIEW + CODE -->
-  <div id="preview-wrap">
-    <p class="section-label" style="margin-top:24px;">XEM TRƯỚC</p>
-    <div id="slider-container">
-      <img id="img-after"  alt="After"  draggable="false">
-      <img id="img-before" alt="Before" draggable="false">
-      <div id="divider">
-        <div id="handle">
-          <svg width="20" height="20" viewBox="0 0 22 22" fill="none">
-            <path d="M7 11H3M7 11L4.5 8.5M7 11L4.5 13.5"       stroke="#333" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M15 11H19M15 11L17.5 8.5M15 11L17.5 13.5" stroke="#333" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-      </div>
-      <div class="lbl" id="tag-b" style="left:12px">Before</div>
-      <div class="lbl" id="tag-a" style="right:12px">After</div>
-    </div>
-
-    <div id="code-wrap">
-      <p class="section-label" style="margin-top:20px;">CODE IFRAME — DÁN VÀO BEHANCE</p>
-      <div class="code-box">
-        <span id="code-text"></span>
-        <button id="copy-btn" onclick="copyCode()">Copy</button>
-      </div>
-      <div class="steps">
-        <p>
-          <strong>Cách dán vào Behance:</strong><br>
-          Trong project editor → click <strong>+</strong> → chọn <strong>Embed</strong> → dán code trên vào → Done
-        </p>
-      </div>
-    </div>
-  </div>
+  <div class="lb" style="left:12px">Before</div>
+  <div class="lb" style="right:12px">After</div>
 </div>
-
 <script>
-let pct = 50;
-const sc   = document.getElementById('slider-container');
-const divE = document.getElementById('divider');
-const imgB = document.getElementById('img-before');
-const imgA = document.getElementById('img-after');
-
-function setPos(p) {
-  pct = Math.max(0, Math.min(100, p));
-  imgB.style.clipPath = 'inset(0 ' + (100 - pct) + '% 0 0)';
-  divE.style.left = pct + '%';
-}
-function getPct(e) {
-  const r = sc.getBoundingClientRect();
-  const cx = e.touches ? e.touches[0].clientX : e.clientX;
-  return (cx - r.left) / r.width * 100;
-}
-let drag = false;
-sc.addEventListener('mousedown',  e => { e.preventDefault(); drag=true; setPos(getPct(e)); });
-window.addEventListener('mousemove', e => { if(drag){ e.preventDefault(); setPos(getPct(e)); } });
-window.addEventListener('mouseup',   () => drag=false);
-sc.addEventListener('touchstart', e => { e.preventDefault(); drag=true; setPos(getPct(e)); }, {passive:false});
-sc.addEventListener('touchmove',  e => { e.preventDefault(); setPos(getPct(e)); },            {passive:false});
-sc.addEventListener('touchend',   () => drag=false);
-window.addEventListener('resize', () => setPos(pct));
-
-function generate() {
-  const urlB = document.getElementById('url-before').value.trim();
-  const urlA = document.getElementById('url-after').value.trim();
-  if (!urlB || !urlA) { alert('Hãy điền cả 2 link ảnh!'); return; }
-
-  const lblB = document.getElementById('lbl-b').value || 'Before';
-  const lblA = document.getElementById('lbl-a').value || 'After';
-  const h    = parseInt(document.getElementById('iframe-h').value) || 500;
-
-  document.getElementById('tag-b').textContent = lblB;
-  document.getElementById('tag-a').textContent = lblA;
-  imgA.src = urlA;
-  imgB.src = urlB;
-
-  imgA.onload = () => {
-    document.getElementById('preview-wrap').style.display = 'block';
-    setTimeout(() => setPos(50), 50);
-  };
-
-  // Build self-contained iframe srcdoc
-  const sliderHTML = `<!DOCTYPE html><html><head><meta charset="utf-8"><style>*{margin:0;padding:0;box-sizing:border-box;}body{background:#000;display:flex;align-items:center;justify-content:center;height:100vh;}#w{position:relative;width:100%;max-width:100%;cursor:ew-resize;user-select:none;touch-action:none;}#w img{-webkit-user-drag:none;pointer-events:none;}#ia{display:block;width:100%;height:auto;}#ib{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;clip-path:inset(0 50% 0 0);}#dv{position:absolute;top:0;bottom:0;left:50%;width:2px;background:rgba(255,255,255,.85);transform:translateX(-50%);pointer-events:none;}#hd{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:42px;height:42px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 10px rgba(0,0,0,.4);}.lb{position:absolute;bottom:12px;background:rgba(0,0,0,.55);color:#fff;font-size:13px;font-weight:500;padding:4px 10px;border-radius:4px;pointer-events:none;font-family:sans-serif;}</style></head><body><div id="w"><img id="ia" src="${urlA}" alt="After" draggable="false"><img id="ib" src="${urlB}" alt="Before" draggable="false"><div id="dv"><div id="hd"><svg width="20" height="20" viewBox="0 0 22 22" fill="none"><path d="M7 11H3M7 11L4.5 8.5M7 11L4.5 13.5" stroke="#333" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 11H19M15 11L17.5 8.5M15 11L17.5 13.5" stroke="#333" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div><div class="lb" style="left:12px">${lblB}</div><div class="lb" style="right:12px">${lblA}</div></div><script>let p=50,drag=false;const w=document.getElementById('w'),dv=document.getElementById('dv'),ib=document.getElementById('ib');function sp(v){p=Math.max(0,Math.min(100,v));ib.style.clipPath='inset(0 '+(100-p)+'% 0 0)';dv.style.left=p+'%';}function gp(e){const r=w.getBoundingClientRect(),cx=e.touches?e.touches[0].clientX:e.clientX;return(cx-r.left)/r.width*100;}w.addEventListener('mousedown',e=>{e.preventDefault();drag=true;sp(gp(e));});window.addEventListener('mousemove',e=>{if(drag){e.preventDefault();sp(gp(e));}});window.addEventListener('mouseup',()=>drag=false);w.addEventListener('touchstart',e=>{e.preventDefault();drag=true;sp(gp(e));},{passive:false});w.addEventListener('touchmove',e=>{e.preventDefault();sp(gp(e));},{passive:false});w.addEventListener('touchend',()=>drag=false);window.addEventListener('resize',()=>sp(p));<\/script></body></html>`;
-
-  const encoded = encodeURIComponent(sliderHTML);
-  const iframeCode = `<iframe width="100%" height="${h}" style="border:none;border-radius:12px;" src="data:text/html,${encoded}" allowfullscreen></iframe>`;
-
-  document.getElementById('code-text').textContent = iframeCode;
-}
-
-function copyCode() {
-  const text = document.getElementById('code-text').textContent;
-  navigator.clipboard.writeText(text).then(() => {
-    const btn = document.getElementById('copy-btn');
-    btn.textContent = 'Copied!';
-    btn.classList.add('copy-ok');
-    setTimeout(() => { btn.textContent='Copy'; btn.classList.remove('copy-ok'); }, 2000);
-  });
-}
+let p=50,drag=false;
+const w=document.getElementById('w'),dv=document.getElementById('dv'),ib=document.getElementById('ib');
+function sp(v){p=Math.max(0,Math.min(100,v));ib.style.clipPath='inset(0 '+(100-p)+'% 0 0)';dv.style.left=p+'%';}
+function gp(e){const r=w.getBoundingClientRect(),cx=e.touches?e.touches[0].clientX:e.clientX;return(cx-r.left)/r.width*100;}
+w.addEventListener('mousedown',e=>{e.preventDefault();drag=true;sp(gp(e));});
+window.addEventListener('mousemove',e=>{if(drag){e.preventDefault();sp(gp(e));}});
+window.addEventListener('mouseup',()=>drag=false);
+w.addEventListener('touchstart',e=>{e.preventDefault();drag=true;sp(gp(e));},{passive:false});
+w.addEventListener('touchmove',e=>{e.preventDefault();sp(gp(e));},{passive:false});
+w.addEventListener('touchend',()=>drag=false);
+window.addEventListener('resize',()=>sp(p));
 </script>
 </body>
 </html>
