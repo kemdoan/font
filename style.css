@@ -11,6 +11,8 @@
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
+* {  -webkit-tap-highlight-color: transparent; }
+
 :root {
   --bg: #efefef;
   --text: #504d69;
@@ -102,7 +104,6 @@ body {
 }
 
 .btn-nm {
-  -webkit-tap-highlight-color: transparent;
   padding: 9px 20px;
   border-radius: 50px;
   font-size: 1rem;
@@ -126,12 +127,10 @@ body {
 
 
 .btn-zalo {
-  -webkit-tap-highlight-color: transparent;
   color: var(--text-muted);
 }
 
 .btn-fb {
-  -webkit-tap-highlight-color: transparent;   
   color: var(--text-muted);
 }
 
@@ -208,7 +207,6 @@ body {
 }
 
 .chip {
-  -webkit-tap-highlight-color: transparent;   
   padding: 9px 20px;
   border-radius: 50px;
   font-size: 1rem;
@@ -319,11 +317,9 @@ body {
 }
 
 .action-btn.buy {
-   -webkit-tap-highlight-color: transparent;  
    color: var(--text-muted);
 }
 .action-btn.dl  {
-   -webkit-tap-highlight-color: transparent; 
    color: var(--text-muted);
 }
 
@@ -340,7 +336,6 @@ body {
 }
 
 .action-btn {
-  -webkit-tap-highlight-color: transparent;
   height: 32px;
   border-radius: 50px;
   border: none;
@@ -375,7 +370,6 @@ body {
 }
 
 .load-more-btn {
-  -webkit-tap-highlight-color: transparent;
   padding: 13px 40px;
   border-radius: 50px;
   border: none;
@@ -449,7 +443,6 @@ body {
 
 /* BACKTOTOP */
 .backtotop-btn {
-  -webkit-tap-highlight-color: transparent;
   position: fixed;
   bottom: 30px;
   right: 1.5rem;
@@ -468,7 +461,6 @@ body {
 }
 /* ── KD FONT FINDER CHIP ── */
 .chip-finder {
-  -webkit-tap-highlight-color: transparent;
   background: var(--pinkgradient);
   color: #fff;
   box-shadow: var(--box-shadow-btn);
@@ -510,7 +502,6 @@ body {
 }
 
 .kd-modal-close {
-  -webkit-tap-highlight-color: transparent;
   position: absolute;
   top: 10px;
   right: 10px;
@@ -602,7 +593,6 @@ body {
 }
 
 .kd-finder-btn {
-  -webkit-tap-highlight-color: transparent;
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -750,7 +740,6 @@ body {
 }
 
 .slide-close {
-  -webkit-tap-highlight-color: transparent;
   position: absolute;
   top: 12px;
   right: 12px;
@@ -789,7 +778,6 @@ body {
 }
 
 .slide-arrow {
-  -webkit-tap-highlight-color: transparent;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -836,7 +824,6 @@ body {
 }
 
 .btn-vip {
-  -webkit-tap-highlight-color: transparent;
   background: var(--pinkgradient);
   color: white;
   border: none;
@@ -1066,4 +1053,53 @@ body {
   color: #fff !important;
   cursor: not-allowed;
   opacity: 0.7;
+}
+
+/*thongbao*/
+.wait-modal-box {
+  background: var(--bg);
+  border-radius: 24px;
+  padding: 36px 32px 28px;
+  max-width: 360px;
+  width: 90vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  animation: modalIn 0.25s cubic-bezier(.4,0,.2,1);
+  text-align: center;
+}
+
+.wait-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--bg);
+  box-shadow: var(--box-shadow-btn);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  color: var(--buy);
+}
+
+.wait-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.5px;
+}
+
+.wait-desc {
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.wait-btns {
+  display: flex;
+  gap: 16px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
