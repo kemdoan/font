@@ -109,7 +109,7 @@ function startFreeCountdown(btn, url) {
       triggerDownload(url);
       btn.innerHTML = btn.dataset.originalHtml;
       btn.disabled = false;
-      freeCountdownActive = false; // Mở khoá cho font khác
+      freeCountdownActive = false;
     }
     remaining--;
   }
@@ -204,7 +204,7 @@ function cardHTML(f) {
   const isPreview = f.type === 'preview';
 
   const priceHTML = isFree
-    ? `<span class="price free">FREE</span>`
+    ? `<span class="price free">Free</span>`
     : isVip
       ? `<span></span>`
       : isPreview
@@ -229,7 +229,7 @@ function cardHTML(f) {
     btnHTML = `<button class="action-btn dl" onclick='openSlideModal(${JSON.stringify(f.slides)})'>${iconMore} Xem thêm</button>`;
   } else {
 
-    btnHTML = `<button class="action-btn buy" onclick="downloadFont(this,'${resolvedLink}')">${iconCart} Tải VIP</button>`;
+    btnHTML = `<button class="action-btn buy" onclick="downloadFont(this,'${resolvedLink}')">${iconCart} Tải font</button>`;
   }
 
   const updateBadge = isVip && f.updateDate
@@ -285,7 +285,6 @@ function loadMore() {
   appendCards();
 }
 
-// downloadFont dùng cho VIP (không đếm ngược)
 function downloadFont(btn, url) {
   const original = btn.innerHTML;
   btn.innerHTML = '<i class="ri-loader-4-line ri-spin"></i> Đang tải...';
@@ -327,7 +326,6 @@ window.addEventListener('scroll', () => {
 backToTopBtn.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
-
 
 // KD Font Finder
 function openFontFinder() {
