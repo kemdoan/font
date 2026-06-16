@@ -58,7 +58,7 @@ const allFonts = [
   { name: 'Bộ KD',     cat: 'kdvip', type: 'kdvip', img: 'images/kd.jpg',   link: '1vgcFX7IAhI6HOyq5C3oI0mY7f8LZHkwE', updateDate: 'Cập nhật 16/05/26' },
   { name: 'Bộ 1FTV',   cat: 'kdvip', type: 'kdvip', img: 'images/1ftv.jpg', link: '1aIiSUrC8-ry-xF5WxSjJAwaM76A5Ay0R', updateDate: 'Cập nhật 16/05/26' },
   { name: 'Bộ BHN',    cat: 'kdvip', type: 'kdvip', img: 'images/bhn.jpg',  link: '1JDIGGYLPHDhefeRgjwA1EFLqIhonRxaF', updateDate: 'Cập nhật 15/06/26' },
-  { name: 'Bộ DFVN',   cat: 'kdvip', type: 'kdvip', img: 'images/dfvn.jpg', link: '16ynZsiQRuh9Nd9YywVpCYUS1Fy5L7hvW', updateDate: 'Cập nhật 16/05/26' },
+  { name: 'Bộ DFVN',   cat: 'kdvip', type: 'kdvip', img: 'images/dfvn.jpg', link: '1KP-nvys9sWblTvZPcUN3mVS1mVFNGnCD', updateDate: 'Cập nhật 16/05/26' },
   { name: 'Bộ FZ',     cat: 'kdvip', type: 'kdvip', img: 'images/fz.jpg',   link: '16ynZsiQRuh9Nd9YywVpCYUS1Fy5L7hvW', updateDate: 'Cập nhật 16/05/26' },
   { name: 'Bộ HL',     cat: 'kdvip', type: 'kdvip', img: 'images/hl.jpg',   link: '1NgD8fo2pq-OZKx56E7KLq7JHQEhmorXb', updateDate: 'Cập nhật 16/05/26' },
   { name: 'Bộ HLT',    cat: 'kdvip', type: 'kdvip', img: 'images/hlt.jpg',  link: '116b3JT2_V60OI653w3WDrN7zlOWIFZb7', updateDate: 'Cập nhật 16/05/26' },
