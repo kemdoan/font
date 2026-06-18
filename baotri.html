@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="images/favicon-512.png">
+  <title>Font - Kem Đoàn</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" rel="stylesheet">
+  <style>
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .page-404 {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 24px;
+    }
+
+    .error-box {
+      border-radius: 28px;
+      padding: 52px 48px;
+      max-width: 900px;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .error-left {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .error-right {
+      flex-shrink: 0;
+    }
+
+    .error-code {
+      font-size: 2.6rem;
+      font-weight: 600;
+      background: var(--buy);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1.6;
+      letter-spacing: 2px;
+    }
+
+    .error-title {
+      font-size: 1.1rem;
+      color: var(--text);
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .error-desc {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .error-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn-home {
+      padding: 9px 20px;
+      border-radius: 50px;
+      border: none;
+      background: var(--bluegradient);
+      color: #fff;
+      font-size: 1rem;
+      letter-spacing: 0.3px;
+      font-family: 'KD Web Font', sans-serif;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      box-shadow: var(--box-shadow-btn);
+      transition: opacity 0.15s;
+    }
+
+    .btn-home:hover {
+         background: var(--pinkgradient);
+    }
+
+    @media (max-width: 640px) {
+      .error-box {
+        flex-direction: column-reverse;
+        padding: 36px 28px;
+        text-align: center;
+      }
+      .error-actions { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page-404">
+  <div class="error-box">
+    <div class="error-left">
+      <div class="error-code">Website đang bảo trì</div>
+      <div class="error-title">Thời gian dự kiến 04:00 PM Ngày 22-07-2026</div>
+      <p class="error-desc">Bán mình cho tư bản vừa thôi =))))))<br>
+      Tắt máy và đi du lịch đi.</p>
+      <div class="error-actions">
+        <a href="https://www.google.com/search?q=tip+%C4%91i+%C4%90%C3%A0+L%E1%BA%A1t+v%E1%BB%9Bi+gi%C3%A1+50k&sca_esv=afc85aa92f7b31d4&biw=1536&bih=695&sxsrf=ANbL-n4UnuQsOBnvXNDAG6j1mRl63DHGEg%3A1779210844158&ei=XJoMaqSwCeq64-EP0MT0mA4&ved=0ahUKEwikzuLy7MWUAxVq3TgGHVAiHeMQ4dUDCBI&uact=5&oq=tip+%C4%91i+%C4%90%C3%A0+L%E1%BA%A1t+v%E1%BB%9Bi+gi%C3%A1+50k&gs_lp=Egxnd3Mtd2l6LXNlcnAiIXRpcCDEkWkgxJDDoCBM4bqhdCB24bubaSBnacOhIDUwazIIECEYoAEYwwRIhBFQ3wVY3wVwAXgAkAEAmAFhoAFhqgEBMbgBA8gBAPgBAZgCAqACcMICCBAAGO8FGLADmAMAiAYBkAYFkgcDMS4xoAfLAbIHAzAuMbgHacIHAzItMsgHCoAIAQ&sclient=gws-wiz-serp" class="btn-home">
+          <i class="ri-plane-line"></i> Tip đi Đà Lạt chỉ với 50k
+        </a>
+      </div>
+    </div>
+    <div class="error-right">
+      <img src="images/baotri.png" alt="404" style="width:250px;">
+    </div>
+  </div>
+</div>
+
+<div class="footer">© Kem Đoàn</div>
+
+</body>
+</html>
