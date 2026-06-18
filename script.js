@@ -103,20 +103,34 @@ function startFreeCountdown(btn, url) {
   btn.disabled = true;
   btn.dataset.originalHtml = btn.innerHTML;
 
+  function onVisible() {
+    if (!document.hidden) {
+      document.removeEventListener('visibilitychange', onVisible);
+      setTimeout(tick, 1000);
+    }
+  }
+
   function tick() {
     btn.innerHTML = `<i class="ri-time-line"></i> ${remaining}s`;
+
     if (remaining <= 0) {
-      clearInterval(timer);
       triggerDownload(url);
       btn.innerHTML = btn.dataset.originalHtml;
       btn.disabled = false;
       freeCountdownActive = false;
+      return;
     }
+
     remaining--;
+
+    if (document.hidden) {
+      document.addEventListener('visibilitychange', onVisible);
+    } else {
+      setTimeout(tick, 1000);
+    }
   }
 
   tick();
-  const timer = setInterval(tick, 1000);
 }
 
 function triggerDownload(url) {
@@ -402,4 +416,4 @@ function closeWaitModal(e) {
   if (e && e.target !== document.getElementById('waitModal')) return;
   document.getElementById('waitModal').classList.remove('active');
   document.body.style.overflow = '';
-}  
+}
