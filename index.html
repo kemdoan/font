@@ -73,7 +73,7 @@
   </div>
 
   <div class="filter-bar">
-    <button class="chip active" onclick="setChip(this,'all')"><i class="ri-list-check"></i> Tất cả</button>
+    <button class="chip" onclick="setChip(this,'all')"><i class="ri-list-check"></i> Tất cả</button>
     <button class="chip" onclick="setChip(this,'cuoi')"><i class="ri-hearts-fill"></i> Font Cưới</button>
     <button class="chip" onclick="setChip(this,'chuky')"><i class="ri-sketching"></i> Font Chữ Ký</button>
     <button class="chip" onclick="setChip(this,'viettay')"><i class="ri-pen-nib-fill"></i> Font Viết Tay</button>
@@ -148,8 +148,11 @@
 <!-- MAIN -->
 <div class="main" id="main">
   <div class="count-row">
-    <span class="vip-note" id="vipNote" style="display:none">
+    <span class="note" id="vipNote" style="display:none">
       * Thư mục dành riêng cho những bạn đang sử dụng Ứng dụng tìm font KD Font Finder.
+    </span>
+    <span class="note" id="freeNote" style="display:none">
+      * Tài khoản VIP nhấn <strong style="color: #666fff;"><i class="ri-download-cloud-2-line"></i> VIP</strong> để tải nhanh.
     </span>
     <div class="count-label" id="countLabel"></div>
   </div>
@@ -170,10 +173,6 @@
       <button class="slide-arrow slide-arrow-right" onclick="changeSlide(1)"><i class="ri-arrow-right-s-line"></i></button>
     </div>
     <div class="slide-dots" id="slideDots"></div>
-    <!--<a id="slideContact" href="http://zalo.me/0559970246" class="kd-finder-btn" target="_blank" rel="noopener">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M7.29117 20.8242L2 22L3.17581 16.7088C2.42544 15.3056 2 13.7025 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C10.2975 22 8.6944 21.5746 7.29117 20.8242Z"/></svg>
-      Mua font
-    </a> -->
   </div>
 </div>
   </div>
