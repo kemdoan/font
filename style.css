@@ -706,7 +706,7 @@ body {
   padding: 0 24px;
 }
 
-.vip-note {
+.note {
   font-family: 'Manrope';
   font-size: 0.87rem;
   color: var(--text-muted);
