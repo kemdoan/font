@@ -4,7 +4,7 @@
 
 const allFonts = [
   { name: 'KD Netsera',         cat: 'cuoi',     type: 'traphi',  img: 'images/kdnetsera.jpg',       link: '1DexKoA1kLiYSkUOimx7kJODVJ1f8CvZ7' },
-  { name: 'KD Goken',           cat: 'khac',     type: 'traphi',  img: 'images/kdgoken.jpg',         link: '1b2O1vybkscQ9PQTWCveA-hCcRzCWXSiE' },
+  { name: 'KD Goken (bản update)',           cat: 'khac',     type: 'traphi',  img: 'images/kdgoken.jpg',         link: '1b2O1vybkscQ9PQTWCveA-hCcRzCWXSiE' },
   { name: 'KD Boxroom',         cat: 'khac',     type: 'traphi',  img: 'images/kdboxroom.jpg',       link: '14nZqyDi7SXmf_C227OrizP4CmTLvN6ob' },
   { name: 'KD Handwritten',     cat: ['viettay', 'cuoi'], type: 'preview', price: 'Liên hệ',         img: 'images/kdhandwritten.jpg', link: 'http://zalo.me/0559970246', slides: ['images/hw1.jpg', 'images/hw2.jpg', 'images/hw3.jpg', 'images/hw4.jpg'] },
   { name: 'KD Handscript',      cat: ['viettay', 'cuoi'], type: 'preview', price: 'Liên hệ',         img: 'images/kdhandscript.jpg',  link: 'http://zalo.me/0559970246', slides: ['images/hs1.jpg', 'images/hs2.jpg', 'images/hs3.jpg', 'images/hs4.jpg'] },
