@@ -194,9 +194,9 @@ function runFilter() {
     vipNote.style.display = currentCat === 'kdvip' && !q ? 'block' : 'none';
   }
 
-  const allNote = document.getElementById('allNote');
-  if (allNote) {
-    allNote.style.display = currentCat === 'all' && !q ? 'block' : 'none';
+  const freeNote = document.getElementById('freeNote');
+  if (freeNote) {
+    freeNote.style.display = currentCat === 'mienphi' && !q ? 'block' : 'none';
   }
 }
 
@@ -239,12 +239,12 @@ function cardHTML(f) {
         </button>
       </div>`;
   } else if (isVip) {
-    btnHTML = `<button class="action-btn dl" onclick="window.open('${resolvedLink}','_blank')">${iconDl} Tải về</button>`;
+    btnHTML = `<button class="action-btn dl" onclick="window.open('${resolvedLink}','_blank')">${iconDl} Download</button>`;
   } else if (isPreview) {
     btnHTML = `<button class="action-btn dl" onclick='openSlideModal(${JSON.stringify(f.slides)})'>${iconMore} Xem thêm</button>`;
   } else {
 
-    btnHTML = `<button class="action-btn buy" onclick="downloadFont(this,'${resolvedLink}')">${iconCart} Tải font</button>`;
+    btnHTML = `<button class="action-btn buy" onclick="downloadFont(this,'${resolvedLink}')">${iconCart} VIP</button>`;
   }
 
   const updateBadge = isVip && f.updateDate
