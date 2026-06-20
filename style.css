@@ -54,7 +54,6 @@ body {
 /* ── HEADER ── */
 .header {
   top: 0;
-  background: var(--bg);
   padding: 20px 24px 20px;
 }
 
@@ -125,7 +124,6 @@ body {
   box-shadow: var(--box-shadow);
 }
 
-
 .btn-zalo {
   color: var(--text-muted);
 }
@@ -157,8 +155,13 @@ body {
   -webkit-appearance: none;
 }
 
-.search-box::placeholder { color: #b1b1ca; }
-.search-box:focus { outline: none; }
+.search-box::placeholder {
+  color: #b1b1ca;
+}
+
+.search-box:focus {
+  outline: none;
+}
 
 .search-icon-left {
   position: absolute;
@@ -194,8 +197,13 @@ body {
   transition: color 0.15s;
 }
 
-.search-clear:hover { color: var(--text); }
-.search-clear.visible { display: flex; }
+.search-clear:hover {
+  color: var(--text);
+}
+
+.search-clear.visible {
+  display: flex;
+}
 
 /* ── FILTER ── */
 .filter-bar {
@@ -319,6 +327,7 @@ body {
 .action-btn.buy {
    color: var(--text-muted);
 }
+
 .action-btn.dl  {
    color: var(--text-muted);
 }
@@ -459,6 +468,7 @@ body {
   align-items: center;
   z-index: 9999;
 }
+
 /* ── KD FONT FINDER CHIP ── */
 .chip-finder {
   background: var(--pinkgradient);
@@ -587,6 +597,7 @@ body {
   font-size: 1rem;
   color: var(--text);
 }
+
 .kd-finder-features li svg {
   color: var(--green);
   flex-shrink: 0;
@@ -608,6 +619,7 @@ body {
   box-shadow: var(--box-shadow-btn);
   transition: opacity 0.15s;
 }
+
 .kd-finder-btn:hover {
   background: var(--bluegradient);
 }
@@ -632,12 +644,14 @@ body {
   background: #000;
   aspect-ratio: 16/9;
 }
+
 .kd-video-wrap video {
   width: 100%;
   height: 100%;
   display: block;
   object-fit: cover;
 }
+
 .kd-video-caption {
   display: flex;
   align-items: center;
@@ -646,6 +660,7 @@ body {
   color: var(--text-muted);
   font-family: 'KD Web Font', sans-serif;
 }
+
 .kd-video-caption svg {
   color: var(--buy);
 }
@@ -801,7 +816,7 @@ body {
   box-shadow: var(--active-btn);
 }
 
-.slide-arrow-left { left: 8px; }
+.slide-arrow-left {left: 8px; }
 .slide-arrow-right { right: 8px; }
 
 .slide-dots {
@@ -864,9 +879,7 @@ body {
   gap: 16px;
 }
 
-.vip-payment {
-  flex: 1;
-}
+.vip-payment { flex: 1; }
 
 .vip-title {
   color: var(--buy);
