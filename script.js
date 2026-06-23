@@ -3,6 +3,7 @@
 ============================================================ */
 
 const allFonts = [
+  { name: 'KD Marthi',          cat: 'khac',        type: 'traphi',  img: 'images/kdmarthi.jpg',     link: '1f72enBFCgHPXYxcZYRVBPoGo-G-5Iwyu' },
   { name: 'KD Quisas',          cat: 'viettay',     type: 'traphi',  img: 'images/kdquisas.jpg',     link: '1q2JQ47c5DjWp1ZolLt4jIZzvz1OhFsg0' },
   { name: 'KD Netsera',         cat: 'cuoi',     type: 'traphi',  img: 'images/kdnetsera.jpg',       link: '1DexKoA1kLiYSkUOimx7kJODVJ1f8CvZ7' },
   { name: 'KD Goken (bản update)',           cat: 'khac',     type: 'traphi',  img: 'images/kdgoken.jpg',         link: '1b2O1vybkscQ9PQTWCveA-hCcRzCWXSiE' },
