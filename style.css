@@ -382,7 +382,6 @@ body {
   box-shadow: var(--active-btn);
 }
 
-
 /* ── XEM TIẾP ── */
 .load-more-wrap {
   display: flex;
@@ -398,14 +397,13 @@ body {
   box-shadow: var(--box-shadow-btn);
   font-size: 1rem;
   font-family: 'KD Web Font', sans-serif;
-  color: var(--text);
+  color: var(--text-muted);
   cursor: pointer;
   transition: box-shadow 0.15s;
 }
 
 .load-more-btn:hover {
-  background: var(--bluegradient);
-  color: #fff;
+  box-shadow: var(--active-btn);
 }
 
 .load-more-btn:disabled {
@@ -469,12 +467,12 @@ body {
   right: 1.5rem;
   cursor: pointer;
   font-size: 18px;
-  height: 40px;
-  width: 40px;
+  height: 36px;
+  width: 36px;
   border-radius: 50%;
   border: none;
-  color: #eeede9;
-  background: var(--bluegradient);
+  color: #ffffff;
+  background: rgba(116, 125, 255, 0.6);
   display: none;
   justify-content: center;
   align-items: center;
