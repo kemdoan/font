@@ -230,15 +230,30 @@ body {
   letter-spacing: 0.3px;
 }
 
+.chip {
+  position: relative;
+  z-index: 0;
+}
+
 .chip.active {
-  background: var(--bluegradient);
   color: #fff;
+}
+
+.chip.active::before {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  background: var(--bluegradient);
+  border-radius: inherit;
+  z-index: -1;
+  box-shadow: 
+    0 0 4px rgba(116, 125, 255,0.7),
+    0 0 8px rgba(59, 130, 246, 0.4);
 }
 
 .chip:hover {
   box-shadow: var(--active-btn);
   background: transparent;
-  color: var(--text-muted);
 }
 
 /* ── MAIN ── */
