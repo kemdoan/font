@@ -3,6 +3,7 @@
 ============================================================ */
 
 const allFonts = [
+  { name: 'KD Holyriver',       cat: 'cuoi',     type: 'traphi',  img: 'images/kdholyriver.jpg',     link: '1dBGceeZkryTXwlzRFjcUnmhjT4W-6ruX' },
   { name: 'KD Forge Sans',      cat: 'khac',     type: 'traphi',  img: 'images/kdforgesans.jpg',  link: '1-Z_JIlRdfWN84y8fxovF7Vabbr34NRZO' },
   { name: 'KD Marthi',          cat: 'khac',     type: 'traphi',  img: 'images/kdmarthi.jpg',     link: '1f72enBFCgHPXYxcZYRVBPoGo-G-5Iwyu' },
   { name: 'KD Quisas',          cat: 'viettay',  type: 'traphi',  img: 'images/kdquisas.jpg',     link: '1q2JQ47c5DjWp1ZolLt4jIZzvz1OhFsg0' },
@@ -45,7 +46,6 @@ const allFonts = [
   { name: 'KD Gold Queen',      cat: 'khac',     type: 'mienphi', img: 'images/kdgoldqueen.jpg',     link: '16h_3idNiGUhwJ2Swtwgy-fPXy9GKg4KI', vipLink: '1SP2SOVgGPBSLhPtSsfz30GitpjA0jsZs' },
   { name: 'KD Goodrace',        cat: 'khac',     type: 'mienphi', img: 'images/kdgoodrace.jpg',      link: '1S-fM8OmhsudF9ZadwxXvB7-Rekp-31Cn', vipLink: '1rF-zSeOdEGe5EIHLBhlx3kxYN7XHBlAd' },
   { name: 'KD Hangout',         cat: 'khac',     type: 'mienphi', img: 'images/kdhangout.jpg',       link: '1CzHypN4jFVGu-toCbJtmf5_AxpI5cQw1', vipLink: '1_Rq3QFZDf5mSM1C2vQyRxpeyyEUMUaDu' },
-  { name: 'KD Holyriver',       cat: 'cuoi',     type: 'traphi',  img: 'images/kdholyriver.jpg',     link: '1dBGceeZkryTXwlzRFjcUnmhjT4W-6ruX' },
   { name: 'KD Lordish',         cat: 'khac',     type: 'traphi',  img: 'images/kdlordish.jpg',       link: '1rcVviMPvJMJRbMNeqMPjgBfvbq5Iqzq7' },
   { name: 'KD Love Lost',       cat: 'khac',     type: 'traphi',  img: 'images/kdlovelost.jpg',      link: '19C_DJvwZAG2yuMRNcAy1llWmdfDRZqjl' },
   { name: 'KD Luxhouse',        cat: 'khac',     type: 'traphi',  img: 'images/kdluxhouse.jpg',      link: '1N-NoV3X4Kg3-NoSfS0C8kHTvDJzdtoyx' },
