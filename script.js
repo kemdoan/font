@@ -3,6 +3,7 @@
 ============================================================ */
 
 const allFonts = [
+  { name: 'KD Kem Doan',        cat: 'khac',     type: 'traphi',  img: 'images/kdkemdoan.jpg',       link: '17j_BgCy0kTpTpNDBRv2Qqpu1guhkY-KD' },
   { name: 'KD Forge Sans',      cat: 'khac',     type: 'traphi',  img: 'images/kdforgesans.jpg',  link: '1-Z_JIlRdfWN84y8fxovF7Vabbr34NRZO' },
   { name: 'KD Marthi',          cat: 'khac',     type: 'traphi',  img: 'images/kdmarthi.jpg',     link: '1f72enBFCgHPXYxcZYRVBPoGo-G-5Iwyu' },
   { name: 'KD Quisas',          cat: 'viettay',  type: 'traphi',  img: 'images/kdquisas.jpg',     link: '1q2JQ47c5DjWp1ZolLt4jIZzvz1OhFsg0' },
@@ -17,7 +18,6 @@ const allFonts = [
   { name: 'KD Doan Nguyen',     cat: 'khac',     type: 'traphi',  img: 'images/kddoannguyen.jpg',    link: '1d3eh5Ge2q_-kgiyv8OHngvXVDOerk0tO', style: '2 style' },
   { name: 'KD Kaelyna Script',  cat: 'cuoi',     type: 'mienphi', img: 'images/kdkaelynascript.jpg',      link: '1OG0Aq95FJM4gxVVzO37Tw7-aPOugEpbl', vipLink: '1qbrtxHkvMby1ZX5tGA3uKLn-7yO0GvjG' },
   { name: 'KD Huees',           cat: 'khac',     type: 'traphi',  img: 'images/kdhuees.jpg',         link: '1qsXoKu7nm_DGpcyAla6gsZFw88hmuLai' },
-  { name: 'KD Kem Doan',        cat: 'khac',     type: 'traphi',  img: 'images/kdkemdoan.jpg',       link: '17j_BgCy0kTpTpNDBRv2Qqpu1guhkY-KD' },
   { name: 'KD Lemaire',         cat: 'cuoi',     type: 'traphi',  img: 'images/kdlemaire.jpg',       link: '1j0tWnOrhLm5S5oTQiUyiM6TPKXiSvtlQ' },
   { name: 'KD Wedding Dress',   cat: 'cuoi',     type: 'traphi',  img: 'images/kdweddingdress.jpg',  link: '18BGqUzfqFxTfCgPBcIpiZ3S4KshrZ_vZ' },
   { name: 'KD Holyriver',       cat: 'cuoi',     type: 'traphi',  img: 'images/kdholyriver.jpg',     link: '1dBGceeZkryTXwlzRFjcUnmhjT4W-6ruX' },
