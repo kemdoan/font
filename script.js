@@ -49,7 +49,7 @@ const allFonts = [
   { name: 'KD Lordish',         cat: 'khac',     type: 'traphi',  img: 'images/kdlordish.jpg',       link: '1rcVviMPvJMJRbMNeqMPjgBfvbq5Iqzq7' },
   { name: 'KD Love Lost',       cat: 'khac',     type: 'traphi',  img: 'images/kdlovelost.jpg',      link: '19C_DJvwZAG2yuMRNcAy1llWmdfDRZqjl' },
   { name: 'KD Luxhouse',        cat: 'khac',     type: 'traphi',  img: 'images/kdluxhouse.jpg',      link: '1N-NoV3X4Kg3-NoSfS0C8kHTvDJzdtoyx' },
-  { name: 'KD Quinzmom',        cat: 'khac',     type: 'mienphi', img: 'images/kdquinzmom.jpg',      link: '1sNTeYVuIgy_PkPrPkCSGCNngHo9tDUO3', vipLink: '1oEaFG85Hcf8waNQV-fMX_i-vUAO60hkN' },
+  { name: 'KD Quinzmom',        cat: 'khac',     type: 'traphi',  img: 'images/kdquinzmom.jpg',      link: '1oEaFG85Hcf8waNQV-fMX_i-vUAO60hkN' },
   { name: 'KD Quynh',           cat: 'cuoi',     type: 'traphi',  img: 'images/kdquynh.jpg',         link: '1bNsvC7iXF_XIoR17WwyptFia_nzVOoK3' },
   { name: 'KD Siren',           cat: 'cuoi',     type: 'traphi',  img: 'images/kdsiren.jpg',         link: '1xA6w2mhC1K-1tCQUPjGcBPDpbdWWXUPP' },
   { name: 'KD Suorva',          cat: 'cuoi',     type: 'traphi',  img: 'images/kdsuorva.jpg',        link: '1HyX3AIXb8pGmh0fF4nUJxKlQfItDcQug' },
